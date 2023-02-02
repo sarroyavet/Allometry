@@ -1,0 +1,211 @@
+Sci name,ID,side,NCBI,Rmax,Rmin,Rmed,L art,# trochlea,Morph_type,Long(mm),Mult,
+Didelphis virginiana,ID 000399433,right,9267,,,,,1,Type I ,69.92,1,ok
+Didelphis marsupialis,ID 000086079,,9268,,,,,1,Type I ,61.56,1,ok
+Dasyurus hallucatus,ID 000082293,,9280,,,,,1,Type I ,39.47,1,ok
+Dasyurus maculatus,ID 000068242,,9281,,,,,1,Type I ,68.79,1,ok
+Antechinus stuartii,ID 000082265,,9283,,,,,1,Type I ,15.14,1,ok
+Sminthopsis crassicaudata,ID 000082325,,9301,,,,,1,Type I ,11.75,1,ok
+Sarcophilus harrisii,ID 000086127,,9305,,,,,1,Type I ,99.44,1,ok
+Sarcophilus harrisii,ID 000447372,left,9305,,,,,1,Type I ,109.3,1,ok
+Trichosurus vulpecula,ID 000068234,,9337,,,,,1,Type I ,78.06,1,ok
+Canis lupus,ID 000106364,left,9612,,,,,1,Type I ,141.4,1,ok
+Canis lupus,ID 000107516,,9612,,,,,1,Type I ,196.6,1,ok
+Canis latrans,ID 000031861,right,9614,,,,,1,Type I ,160.1,1,ok
+Canis latrans,ID 000106752,,9614,,,,,1,Type I ,162.2,1,ok
+Canis latrans,ID 000382997,,9614,,,,,1,Type I ,157.1,1,ok
+Canis latrans,ID 000388359,right,9614,,,,,1,Type I ,157.1,1,ok
+Canis lupus familiaris,ID 000025741,right,9615,,,,,1,Type I ,192.6,1,ok
+Canis lupus familiaris,ID 000025754,left,9615,,,,,1,Type I ,194.5,1,ok
+Canis lupus familiaris,ID 000031840,right,9615,,,,,1,Type I ,141.8,1,ok
+Canis lupus familiaris,ID 000388442,,9615,,,,,1,Type I ,166.2,1,ok
+Vulpes vulpes,ID 000031944,right,9627,,,,,1,Type I ,126.4,1,ok
+Vulpes vulpes,ID 000105316,,9627,,,,,1,Type I ,130.9,1,ok
+Helarctos malayanus,ID 000446974,left,9634,,,,,1,Type I ,224.1,1,ok
+Melursus ursinus,ID 000446957,left,9636,,,,,1,Type I ,229.9,1,ok
+Tremarctos ornatus,ID 000446883,left,9638,,,,,1,Type I ,209.4,1,ok
+Ursus arctos,ID 000120221,,9644,,,,,1,Type I ,294.1,1,ok
+Ursus arctos,ID 000120223,,9644,,,,,1,Type I ,296.5,1,ok
+Ursus arctos,ID 000123500,left,9644,,,,,1,Type I ,383.6,1,ok
+Ursus arctos,ID 000427757,right,9644,,,,,1,Type I ,409.5,1,ok
+Procyon lotor,ID 000110218,left,9654,,,,,1,Type I ,92.04,1,ok
+Procyon lotor,ID 000110282,right,9654,,,,,1,Type I ,91.25,1,ok
+Felis catus,ID 000031869,right,9685,,,,,1,Type I ,93,1,ok
+Felis catus,ID 000382988,,9685,,,,,1,Type I ,115.3,1,ok
+Felis catus,ID 000388304,right,9685,,,,,1,Type I ,115.4,1,ok
+Panthera leo,ID 000031932,right,9689,,,,,1,Type I ,307.8,1,ok
+Panthera pardus,ID 000119883,left,9691,,,,,1,Type I ,213.4,1,ok
+Panthera pardus,ID 000119885,right,9691,,,,,1,Type I ,207.3,1,ok
+Panthera tigris,ID 000123256,right,9694,,,,,1,Type I ,305.3,1,ok
+Puma concolor,ID 000031935,right,9696,,,,,1,Type I ,237.8,1,ok
+Puma concolor,ID 000104608,left,9696,,,,,1,Type I ,239.3,1,ok
+Elephas maximus,ID 000168766,left,9783,,,,,1,Type I ,797,1,ok
+Elephas maximus,ID 000168768,right,9783,,,,,1,Type I ,797.9,1,ok
+Equus zebra,ID 000121651,left,9791,,,,,2,Type 2,251.8,1,ok
+Equus asinus,ID 000105453,left,9793,,,,,2,Type 2,303.6,1,ok
+Equus caballus,ID 000122806,right,9796,,,,,2,Type 2,310.2,1,ok
+Tapirus indicus,ID 000423619,left,9802,,,,,2,Type 2,279.2,1,ok
+Diceros bicornis,ID 000364937,left,9805,,,,,1,Type I ,37.96,10,ok
+Diceros bicornis,ID 000365776,left,9805,,,,,1,Type I ,363.5,1,ok
+Diceros bicornis,ID 000367251,left,9805,,,,,1,Type I ,34.86,10,ok
+Diceros bicornis,ID 000367352,left,9805,,,,,1,Type I ,36.65,10,ok
+Diceros bicornis,ID 000421099,right,9805,,,,,1,Type I ,400.3,1,ok
+Diceros bicornis,ID 000421149,left,9805,,,,,1,Type I ,40.9,10,ok
+Diceros bicornis,ID 000421224,right,9805,,,,,1,Type I ,40.42,10,ok
+Diceros bicornis,ID 000421251,right,9805,,,,,1,Type I ,380.1,1,ok
+Ceratotherium simum,ID 000365666,right,9807,,,,,1,Type I ,407.3,1,ok
+Rhinoceros unicornis,ID 000365950,left,9809,,,,,1,Type I ,47.58,10,ok
+Rhinoceros unicornis,ID 000365984,left,9809,,,,,1,Type I ,463,1,ok
+Rhinoceros unicornis,ID 000366038,left,9809,,,,,1,Type I ,465.8,1,ok
+Rhinoceros unicornis,ID 000366056,left,9809,,,,,1,Type I ,43.06,10,ok
+Rhinoceros unicornis,ID 000421571,left,9809,,,,,1,Type I ,44.68,10,ok
+Rhinoceros unicornis,ID 000421597,left,9809,,,,,1,Type I ,43.15,10,ok
+Orycteropus afer,ID 000446927,left,9818,,,,,1,Type I ,154.4,1,ok
+Camelus dromedarius,ID 000111892,left,9838,,,,,1,Type I ,407.6,1,ok
+Lama glama,ID 000120933,left,9844,,,,,1,Type I ,279.9,1,ok
+Lama glama,ID 000120935,right,9844,,,,,1,Type I ,276.2,1,ok
+Cervus elaphus,ID 000122050,left,9860,,,,,2,Type 2,245.2,1,ok
+Cervus elaphus,ID 000122158,right,9860,,,,,2,Type 2,246.7,1,ok
+Odocoileus hemionus,ID 000105109,left,9872,,,,,2,Type 2,199.3,1,ok
+Odocoileus hemionus,ID 000105187,right,9872,,,,,2,Type 2,201.7,1,ok
+Odocoileus hemionus,ID 000122296,,9872,,,,,2,Type 2,230.1,1,ok
+Odocoileus virginianus,ID 000388385,right,9874,,,,,2,Type 2,188,1,ok
+Antilocapra americana,ID 000108322,left,9891,,,,,2,Type 2,202.7,1,ok
+Giraffa camelopardalis,ID 000119583,,9894,,,,,2,Type 2,499.1,1,ok
+Giraffa camelopardalis,ID 000119585,,9894,,,,,2,Type 2,500.5,1,ok
+Ammotragus lervia,ID 000399110,,9899,,,,,2,Type 2,215.7,1,ok
+Ammotragus lervia,ID 000399156,,9899,,,,,2,Type 2,236.6,1,ok
+Bison bison,ID 000106144,left,9901,,,,,2,Type 2,378.4,1,ok
+Bison bison,ID 000106236,right,9901,,,,,2,Type 2,378.4,1,ok
+Bison bison,ID 000398778,,9901,,,,,2,Type 2,321.2,1,ok
+Bison bison,ID 000398820,,9901,,,,,2,Type 2,357.6,1,ok
+Bos javanicus,ID 000398872,,9906,,,,,2,Type 2,313.7,1,ok
+Bos javanicus,ID 000398920,,9906,,,,,2,Type 2,281.9,1,ok
+Bos taurus,ID 000398837,,9913,,,,,2,Type 2,328.1,1,ok
+Boselaphus tragocamelus,ID 000398475,,9917,,,,,2,Type 2,248.1,1,ok
+Boselaphus tragocamelus,ID 000398492,,9917,,,,,2,Type 2,266.3,1,ok
+Capra hircus,ID 000399077,,9925,,,,,2,Type 2,184,1,ok
+Connochaetes taurinus,ID 000397792,,9927,,,,,2,Type 2,202.3,1,ok
+Connochaetes taurinus,ID 000397823,,9927,,,,,2,Type 2,206.1,1,ok
+Ovis aries,ID 000106904,left,9940,,,,,2,Type 2,227.4,1,ok
+Ovis aries,ID 000107004,right,9940,,,,,2,Type 2,228.1,1,ok
+Ovis aries,ID 000399310,,9940,,,,,2,Type 2,159.2,1,ok
+Taurotragus oryx,ID 000400115,,9945,,,,,2,Type 2,334.2,1,ok
+Oryx gazella,ID 000399838,,9958,,,,,2,Type 2,194.2,1,ok
+Oryx gazella,ID 000399891,,9958,,,,,2,Type 2,221.1,1,ok
+Oryx gazella,ID 000399913,,9958,,,,,2,Type 2,239.2,1,ok
+Kobus ellipsiprymnus,ID 000400043,,9962,,,,,2,Type 2,238.1,1,ok
+Kobus ellipsiprymnus,ID 000400060,,9962,,,,,2,Type 2,245.9,1,ok
+Capricornis sp,ID 000399139,,9966,,,,,2,Type 2,268.7,1,ok
+Syncerus caffer,ID 000398854,,9970,,,,,2,Type 2,300.2,1,ok
+Marmota monax,ID 000158256,,9995,,,,,1,Type I ,68.04,1,ok
+Hystrix cristata,ID 000447002,left,10137,,,,,1,Type I ,110.4,1,ok
+Hydrochoerus hydrochaeris,ID 000158236,,10149,,,,,2,Type 2,175.2,1,ok
+Myocastor coypus,ID 000118959,left,10157,,,,,1,Type I ,67.77,1,ok
+Myocastor coypus,ID 000119027,right,10157,,,,,1,Type I ,67.79,1,ok
+Myocastor coypus,ID 000158266,,10157,,,,,1,Type I ,69.42,1,ok
+Bubalus depressicornis,ID 000398560,,27596,,,,,2,Type 2,206.4,1,ok
+Bubalus depressicornis,ID 000398733,,27596,,,,,2,Type 2,207.6,1,ok
+Ursus maritimus,ID 000169471,left,29073,,,,,1,Type I ,259.7,1,ok
+Vombatus ursinus,ID 000446918,left,29139,,,,,1,Type I ,124.8,1,ok
+Bos frontalis,ID 000398890,,30520,,,,,2,Type 2,306.6,1,ok
+Bos frontalis,ID 000398903,,30520,,,,,2,Type 2,321.3,1,ok
+Bos grunniens,ID 000398546,,30521,,,,,2,Type 2,319,1,ok
+Bos grunniens,ID 000398803,,30521,,,,,2,Type 2,286.7,1,ok
+Taxidea taxus,ID 000106526,,30554,,,,,1,Type I ,0.1015,1000,ok
+Taxidea taxus,ID 000106542,right,30554,,,,,1,Type I ,0.1012,1000,ok
+Lasiorhinus latifrons,ID 000446905,left,30668,,,,,1,Type I ,111.7,1,ok
+Canis simensis,ID 000158186,,32534,,,,,1,Type I ,185.1,1,ok
+Acinonyx jubatus,ID 000031645,right,32536,,,,,1,Type I ,218.1,1,ok
+Acinonyx jubatus,ID 000158176,,32536,,,,,1,Type I ,241.9,1,ok
+Leopardus pardalis,ID 000031875,right,32538,,,,,1,Type I ,153.6,1,ok
+Erethizon dorsatum,ID 000106602,right,34844,,,,,1,Type I ,92.81,1,ok
+Rupicapra rupicapra,ID 000399173,,34869,,,,,2,Type 2,165,1,ok
+Rupicapra rupicapra,ID 000399297,,34869,,,,,2,Type 2,174.9,1,ok
+Naemorhedus goral,ID 000399203,,34871,,,,,2,Type 2,164.7,1,ok
+Oreamnos americanus,ID 000119273,left,34873,,,,,2,Type 2,206,1,ok
+Oreamnos americanus,ID 000119367,right,34873,,,,,2,Type 2,206,1,ok
+Oreamnos americanus,ID 000399095,,34873,,,,,2,Type 2,266.6,1,ok
+Saiga tatarica,ID 000398090,,34875,,,,,2,Type 2,139.3,1,ok
+Saiga tatarica,ID 000398117,,34875,,,,,2,Type 2,145.2,1,ok
+Ovibos moschatus,ID 000121146,left,37176,,,,,2,Type 2,302.6,1,ok
+Ovibos moschatus,ID 000399281,,37176,,,,,2,Type 2,295.2,1,ok
+Hemitragus jemlahicus,ID 000119750,left,37179,,,,,2,Type 2,239.3,1,ok
+Hemitragus jemlahicus,ID 000399242,,37179,,,,,2,Type 2,186.8,1,ok
+Hippotragus equinus,ID 000399857,,37186,,,,,2,Type 2,250.8,1,ok
+Hippotragus equinus,ID 000399934,,37186,,,,,2,Type 2,261.6,1,ok
+Gazella dorcas,ID 000398243,,37751,,,,,2,Type 2,128.3,1,ok
+Gazella dorcas,ID 000398255,,37751,,,,,2,Type 2,118.3,1,ok
+Oryx leucoryx,ID 000399965,,39411,,,,,2,Type 2,196.3,1,ok
+Oryx leucoryx,ID 000399982,,39411,,,,,2,Type 2,191,1,ok
+Gulo gulo,ID 000121302,left,48420,,,,,1,Type I ,139.8,1,ok
+Gulo gulo,ID 000446966,left,48420,,,,,1,Type I ,124.9,1,ok
+Cephalophus silvicultor,ID 000399816,,50347,,,,,2,Type 2,198.2,1,ok
+Castor canadensis,ID 000158206,,51338,,,,,1,Type I ,84,1,ok
+Myrmecobius fasciatus,ID 000068250,,55782,,,,,1,Type I ,30.94,1,ok
+Tapirus bairdii,ID 000058226,right,56117,,,,,2,Type 2,240.8,1,ok
+Tapirus bairdii,ID 000169248,right,56117,,,,,2,Type 2,251.2,1,ok
+Addax nasomaculatus,ID 000399874,,59515,,,,,2,Type 2,204.4,1,ok
+Alcelaphus buselaphus,ID 000397805,,59517,,,,,2,Type 2,197.2,1,ok
+Antidorcas marsupialis,ID 000398134,,59523,,,,,2,Type 2,154.7,1,ok
+Antidorcas marsupialis,ID 000398289,,59523,,,,,2,Type 2,127.5,1,ok
+Antilope cervicapra,ID 000397840,,59525,,,,,2,Type 2,151.8,1,ok
+Antilope cervicapra,ID 000398275,,59525,,,,,2,Type 2,145.7,1,ok
+Ourebia ourebi,ID 000398152,,59536,,,,,2,Type 2,116.7,1,ok
+Pseudois nayaur,ID 000399228,,59542,,,,,2,Type 2,200.5,1,ok
+Pseudois nayaur,ID 000399259,,59542,,,,,2,Type 2,195,1,ok
+Redunca arundinum,ID 000400013,,59554,,,,,2,Type 2,140.3,1,ok
+Redunca arundinum,ID 000400030,,59554,,,,,2,Type 2,135.7,1,ok
+Felis margarita,ID 000110522,left,61378,,,,,1,Type I ,98.43,1,ok
+Felis margarita,ID 000110540,right,61378,,,,,1,Type I ,99.1,1,ok
+Lynx rufus,ID 000031892,right,61384,,,,,1,Type I ,155.4,1,ok
+Caracal caracal,ID 000158196,,61394,,,,,1,Type I ,128.9,1,ok
+Leptailurus serval,ID 000166839,left,61405,,,,,1,Type I ,187.1,1,ok
+Neofelis nebulosa,ID 000031925,right,61452,,,,,1,Type I ,162.5,1,ok
+Echymipera rufescens,ID 000082302,,65611,,,,,1,Type I ,45.2,1,ok
+Isoodon obesulus,ID 000082443,,65612,,,,,1,Type I ,37.58,1,ok
+Tragelaphus scriptus,ID 000400084,,66440,,,,,2,Type 2,191.9,1,ok
+Oreotragus oreotragus,ID 000399999,,66444,,,,,2,Type 2,116.7,1,ok
+Speothos venaticus,ID 000031941,right,68741,,,,,2,Type 2,103.1,1,ok
+Eudorcas thomsonii,ID 000398104,,69308,,,,,2,Type 2,122.6,1,ok
+Eudorcas thomsonii,ID 000398224,,69308,,,,,2,Type 2,128.9,1,ok
+Tupaia tana,ID 000034008,left,70687,,,,,1,Type I ,32.75,1,ok
+Ceratotherium simum simum,ID 000421069,left,73337,,,,,1,Type I ,46.21,10,ok
+Tetracerus quadricornis,ID 000398511,,73823,,,,,2,Type 2,114.9,1,ok
+Tetracerus quadricornis,ID 000398528,,73823,,,,,2,Type 2,129.3,1,ok
+Martes pennanti,ID 000106058,right,76720,,,,,1,Type I ,84.46,1,ok
+Bubalus bubalis,ID 000398744,,89462,,,,,2,Type 2,295.5,1,ok
+Bubalus bubalis,ID 000398761,,89462,,,,,2,Type 2,255.5,1,ok
+Dicerorhinus sumatrensis,ID 000169046,right,89632,,,,,1,Type I ,354.1,1,ok
+Dicerorhinus sumatrensis,ID 000365710,left,89632,,,,,1,Type I ,36.4,10,ok
+Dicerorhinus sumatrensis,ID 000365751,right,89632,,,,,1,Type I ,354.2,1,ok
+Genetta genetta,ID 000166845,right,94190,,,,,1,Type I ,73.65,1,ok
+Rhinoceros sondaicus,ID 000365850,left,102233,,,,,1,Type I ,455.4,1,ok
+Rhinoceros sondaicus,ID 000365897,left,102233,,,,,1,Type I ,430.5,1,ok
+Rhinoceros sondaicus,ID 000367406,right,102233,,,,,1,Type I ,45.63,10,ok
+Caluromysiops irrupta,ID 000082284,,126286,,,,,1,Type I ,38.58,1,ok
+Tupaia minor,ID 000032449,right,143289,,,,,1,Type I ,21.55,1,ok
+Tupaia minor,ID 000033722,left,143289,,,,,1,Type I ,21.58,1,ok
+Tolypeutes matacus,ID 000158276,,183749,,,,,2,Type 2,44.68,1,ok
+Acrobates pygmaeus,ID 000052804,,190720,,,,,1,Type I ,12.67,1,ok
+Urogale everetti,ID 000034160,left,192726,,,,,1,Type I ,32.24,1,ok
+Urogale everetti,ID 000034164,right,192726,,,,,1,Type I ,32.35,1,ok
+Ceratotherium simum cottoni,ID 000364703,left,310713,,,,,1,Type I ,391.5,1,ok
+Ceratotherium simum cottoni,ID 000364758,left,310713,,,,,1,Type I ,36.81,10,ok
+Ceratotherium simum cottoni,ID 000364783,right,310713,,,,,1,Type I ,38.32,10,ok
+Ceratotherium simum cottoni,ID 000364808,left,310713,,,,,1,Type I ,37.95,10,ok
+Ceratotherium simum cottoni,ID 000364833,left,310713,,,,,1,Type I ,39.26,10,ok
+Ceratotherium simum cottoni,ID 000364858,left,310713,,,,,1,Type I ,40.66,10,ok
+Ceratotherium simum cottoni,ID 000364883,left,310713,,,,,1,Type I ,39.14,10,ok
+Ceratotherium simum cottoni,ID 000364908,right,310713,,,,,1,Type I ,41.22,10,ok
+Ceratotherium simum cottoni,ID 000420905,left,310713,,,,,1,Type I ,40.14,10,ok
+Ceratotherium simum cottoni,ID 000420938,left,310713,,,,,1,Type I ,42.04,10,ok
+Ceratotherium simum cottoni,ID 000420972,left,310713,,,,,1,Type I ,39.86,10,ok
+Ceratotherium simum cottoni,ID 000421003,left,310713,,,,,1,Type I ,41.42,10,ok
+Ptilocercus lowii,ID 000096392,right,320338,,,,,1,Type I ,22.12,1,ok
+Tupaia palawanensis,ID 000036015,right,320359,,,,,1,Type I ,27.25,1,ok
+Tupaia palawanensis,ID 000036041,left,320359,,,,,1,Type I ,27.39,1,ok
+Neovison vison,ID 000105350,,452646,,,,,1,Type I ,39.42,1,ok
+Equus asinus,ID 000034625,left,582580,,,,,1,Type I ,304.1,1,ok
+Hemibelideus lemuroides,ID 000068192,,596256,,,,,1,Type I ,50,1,ok
+Geocapromys brownii,ID 000158226,,1543402,,,,,1,Type I ,55.52,1,ok
+Dasypus hybridus,ID 000158216,,1756220,,,,,2,Type 2,47.02,1,ok
