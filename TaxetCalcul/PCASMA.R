@@ -740,8 +740,9 @@ phy.dat <- CompData$phy
 phy.dat <- ladderize(phy.dat) # for better visualization
 phy.dat<-compute.brlen(phy.dat,power=0.65) # get rid of branch lengths 
 
-linewidth = 3
-barwidth = 0.02
+linewidth = 3 # tree width
+barwidth = 0.02 # bar width
+scaleb = 0.05 # scale of the bars
 
 # data for the heat map
 Dmed.dat <- log10(CompData$data$Dmed)
@@ -772,7 +773,8 @@ GRofamilialists <- findspc(valG = as.list(GRfamilia[['family']]),
                            val = 'family')
 
 # to color the bars according to order
-# barcoln <- setNames(wes_palette("Zissou1", length(unique(GRorders$order)), type = "continuous"), 
+# barcoln <- setNames(wes_palette("Zissou1", length(unique(GRorders$order)), 
+#                                 type = "continuous"), 
 #                     unique(GRorders$order))
 # barcol = list()
 # for (spec in 1:length(tipis)){
@@ -782,30 +784,38 @@ GRofamilialists <- findspc(valG = as.list(GRfamilia[['family']]),
 # to color the bars according to faimly
 # barcoln <- setNames(inferno(length(unique(GRfamilia$family))), 
 #                     unique(GRfamilia$family))
-
 barcoln <- setNames(palette.colors(length(unique(GRfamilia$family)),
                                    palette = 'polychrome'),
                     unique(GRfamilia$family))
-
 barcol = list()
 for (spec in 1:length(tipis)){
   barcol<-append(barcol,barcoln[GRofamilialists$spc[[spec]]])
 }
-
 # assign name to colors
 barcol <- as.character(barcol)
 barcol<-setNames(barcol,tipis)
 
+# bar sizes according to La
 La.dat <- log10(CompData$data$La)
 names(La.dat) <- CompData$phy$tip.label
-# barcol = 'black'
 
 # plot the bars, tree color transparent
-plotTree.wBars(MapDmed$tree,La.dat,scale=0.05,type="fan",color="transparent",
-               col=barcol, part=0.5, outline = T, border = 'white', width=barwidth)
+plotTree.wBars(MapDmed$tree,
+               La.dat,
+               scale=scaleb,
+               type="fan",
+               color="transparent",
+               col=barcol, 
+               part=0.5, 
+               outline = T, 
+               border = 'white', 
+               width=barwidth)
 
 # plot arcs
 # para orden
+colsarc <- setNames(kelly(length(unique(GRorders$order))),
+                 unique(GRorders$order))
+
 for(i in 1:length(GRorderslists$Gr)){
   name = names(GRorderslists$Gr)[i]
   tips = as.character(GRorderslists$Gr[[i]])
@@ -817,39 +827,132 @@ for(i in 1:length(GRorderslists$Gr)){
   arc.cladelabels(tree = MapDmed$tree,
                   text = name,
                   node = nodes,
-                  ln.offset=1.14,
-                  lab.offset=1.16,
+                  ln.offset=1.16,
+                  lab.offset=1.18,
                   mark.node=FALSE,
                   orientation = 'horizontal',
                   cex = 0.8,
+                  col = colsarc[[name]],
+                  lwd = 2
   )
 }
+# # para familia
+# for(i in 1:length(GRofamilialists$Gr)){
+#   name = names(GRofamilialists$Gr)[i]
+#   tips = as.character(GRofamilialists$Gr[[i]])
+#   if (length(GRofamilialists$Gr[[i]])>1){
+#     nodes = findMRCA(MapDmed$tree,tips)}
+#   else{
+#     nodes =  which(MapDmed$tree$tip.label==tips)
+#   }
+#   if (length(nodes)>0){
+#     arc.cladelabels(tree = MapDmed$tree,
+#                     text = name,
+#                     node = nodes,
+#                     ln.offset=1.14,
+#                     lab.offset=1.16,
+#                     mark.node=FALSE,
+#                     orientation = 'horizontal',
+#                     cex = 0.5,
+#     )
+#   }
+# }
 
 # plot the tree
-# fanCladogram(MapDmed$tree,lwd=6,part=0.5,fsize=0.8)
-fanCladoBar(MapDmed$tree, lwd=linewidth,colors=MapDmed$cols,part=0.5,
-         fsize=0.8,add=TRUE)
+fanCladoBar(MapDmed$tree, 
+            lwd=linewidth,
+            colors=MapDmed$cols,
+            part=0.5,
+            fsize=0.8,
+            add=TRUE)
 
-add.color.bar(0.75,cols=MapDmed$cols,lims=MapDmed$lims,
-              digits=2,x=par()$usr[2]-1,y=par()$usr[3]+0.1,prompt=FALSE,
-              title="log10(Dmed)",subtitle="", cex=0.8, outline = FALSE)
+# add the color bar of dmed
+add.color.bar(0.75,
+              cols=MapDmed$cols,
+              lims=MapDmed$lims,
+              digits=2,
+              x=par()$usr[2]-2.5,
+              y=par()$usr[3]+0.5,
+              prompt=FALSE,
+              title="log10(Dmed)",
+              subtitle="", 
+              cex=0.8, 
+              outline = FALSE,
+              lwd = linewidth
+              )
 
-# de blog de Revell
-scale<-0.3*max(nodeHeights(MapDmed$tree))/diff(range(La.dat))
-w<-(par()$usr[4]-par()$usr[3])/(max(c(max(scale*La.dat)/
-                                        max(nodeHeights(MapDmed$tree)),1))*Ntip(MapDmed$tree))
+# based on Revell's blog: to plot the scales of the bar(min, mean, max)
+scale<-scaleb
+w <- barwidth
+# min
 xx<-0.95*par()$usr[2]
 yy<-0.95*par()$usr[4]
+colorb = barcoln[GRofamilialists$spc[[which.min(La.dat)]]]
+polygon(c(xx,xx-scale*min(La.dat),xx-scale*min(La.dat),xx),
+        c(yy-w/2,yy-w/2,yy+w/2,yy+w/2),
+        col=colorb, 
+        border = F)
+text(xx-scale*min(La.dat),yy,
+     paste('log10(La) = ',
+           round(min(La.dat),1)),
+     pos=2,
+     cex=0.8)
+# mean
+xx<-0.95*par()$usr[2]
+yy<-0.9*par()$usr[4]
+newladat <- abs(mean(La.dat)-La.dat)
+colorb = barcoln[GRofamilialists$spc[[which.min(newladat)]]]
 polygon(c(xx,xx-scale*mean(La.dat),xx-scale*mean(La.dat),xx),
-        c(yy-w/2,yy-w/2,yy+w/2,yy+w/2),col="black", border = F)
-text(xx-scale*mean(La.dat),yy,paste('log10(La) = ',round(mean(La.dat),1)),
-     pos=2,cex=0.8)
+        c(yy-w/2,yy-w/2,yy+w/2,yy+w/2),
+        col=colorb, 
+        border = F)
+text(xx-scale*mean(La.dat),yy,
+     paste('log10(La) = ',
+           round(mean(La.dat),1)),
+     pos=2,
+     cex=0.8)
+# max
+xx<-0.95*par()$usr[2]
+yy<-0.85*par()$usr[4]
+colorb = barcoln[GRofamilialists$spc[[which.max(La.dat)]]]
+polygon(c(xx,xx-scale*max(La.dat),xx-scale*max(La.dat),xx),
+        c(yy-w/2,yy-w/2,yy+w/2,yy+w/2),
+        col=colorb, 
+        border = F)
+text(xx-scale*max(La.dat),yy,
+     paste('log10(La) = ',
+           round(max(La.dat),1)),
+     pos=2,
+     cex=0.8)
 
-legend("topleft",names(barcoln),pch=22,
-       pt.bg=barcoln,pt.cex=0.8,
-       cex=0.8,bty="n", x.intersp = 0.2, ncol=2, y.intersp = 0.9 )
+# family colors
+legend("topleft",
+       names(barcoln),
+       pch=22,
+       pt.bg=barcoln,
+       pt.cex=0.8,
+       cex=0.8,
+       bty="n", 
+       x.intersp = 0.2, 
+       ncol=2, 
+       y.intersp = 0.9)
+
+# order colors
+legend("bottomleft",
+       names(colsarc),
+       pch=22,
+       pt.bg=colsarc,
+       pt.cex=0.8,
+       cex=0.8,
+       bty="o", 
+       x.intersp = 0.2, 
+       y.intersp = 0.01,
+       text.width	= 0.25,
+       horiz = T)
 
 dev.off()
+
+
 
 # to check the names of each tip
 H = 4
@@ -986,23 +1089,23 @@ GRofamilialists <- findspc(valG = as.list(GRfamilia[['family']]),
 
 
 # para familia
-for(i in 1:length(GRofamilialists)){
-  name = names(GRofamilialists)[i]
-  tips = as.character(GRofamilialists[[i]])
-  if (length(GRofamilialists[[i]])>1){
-    nodes = findMRCA(CompData$phy,tips)}
-  else{
-    nodes =  which(CompData$phy$tip.label==tips)
-  }
-  arc.cladelabels(tree = CompData$phy,
-                  text = name,
-                  node = nodes,
-                  ln.offset=1.12,
-                  lab.offset=1.14,
-                  mark.node=FALSE,
-                  orientation = 'horizontal'
-  )
-}
+# for(i in 1:length(GRofamilialists)){
+#   name = names(GRofamilialists)[i]
+#   tips = as.character(GRofamilialists[[i]])
+#   if (length(GRofamilialists[[i]])>1){
+#     nodes = findMRCA(CompData$phy,tips)}
+#   else{
+#     nodes =  which(CompData$phy$tip.label==tips)
+#   }
+#   arc.cladelabels(tree = CompData$phy,
+#                   text = name,
+#                   node = nodes,
+#                   ln.offset=1.12,
+#                   lab.offset=1.14,
+#                   mark.node=FALSE,
+#                   orientation = 'horizontal'
+#   )
+# }
 
 
 
@@ -1029,11 +1132,6 @@ for(i in 1:length(GRorderslists)){
 
 # add.color.bar(35,p$cols,title="Colour elaboration\nrank",lims=p$lims,prompt=FALSE,digits=0,
 #               x=par()$usr[1]*0.99, y=par()$usr[3]*0.99, lwd = 5, subtitle = '')
-
-
-
-
-
 
 
 #
