@@ -22,6 +22,6 @@ Aix Marseille Univ, CNRS, ISM, Marseille, France
 
 :open_file_folder: [Distal](Distal): ".vtk" files of the distal surface of the humeri.
 
-:memo:[New tax.csv](New tax.csv) : input file for the EspInfo.py code. This file contains the information of the species used in the study. This file is created from the first sheet file [Especies and bones.ods](Tables/ok_Especies_and_bones.ods)  in :open_file_folder: [Tables](Tables).
+:memo:[New tax.csv](New_tax.csv) : input file for the EspInfo.py code. This file contains the information of the species used in the study. This file is created from the first sheet file [Especies and bones.ods](Tables/ok_Especies_and_bones.ods)  in :open_file_folder: [Tables](Tables).
 
 :memo: [3DfilesDb.csv](3DfilesDb.csv) : input file for the EspInfo.py code. This file contains the information of the bones used in the study. This file is created from the second sheet file [Especies and bones.ods](Tables/ok_Especies_and_bones.ods) in :open_file_folder: [Tables](Tables).
