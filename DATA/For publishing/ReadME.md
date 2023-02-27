@@ -8,7 +8,7 @@ This folder contains the supplementary data for the research article:
 
 Aix Marseille Univ, CNRS, ISM, Marseille, France
 
-:open_file_folder: tables: Tables with the data of species, bones and results.
+:open_file_folder: [tables](tables): Tables with the data of species, bones and results.
      
      - [StrideAngles.ods](tables/StrideAngles.ods) : data extracted from Tokuriki (1974) to determine the stride frequency.
      - [Similarity rules.ods](tables/Similarity Rules.ods) : data extracted fromUsed to calculate the allometric exponent within the classical similarity rules framework.
