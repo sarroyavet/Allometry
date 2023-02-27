@@ -1,3 +1,39 @@
+#### Kilbourne et al 2013 for the mass in gr #### 
+#### ...moment of inertia of the forelimb #### 
+Data_Animal_de_pd['MoI'] <- 
+  10*(10^(-2.02)*(1/1000^1.78)*Data_Animal_de_pd['massAvg']^(1.78))  # g/cm2 *10 to kg/m2
+#### ...mass of the forelimb  #### 
+Data_Animal_de_pd['Limb_mass'] <- 
+  (10^(-1.15)*(1/1000^1.01)*Data_Animal_de_pd['massAvg']^(1.01))/1000 # g /1000 to kg
+#### ...forelimb center of mass #### 
+Data_Animal_de_pd['CoM'] <- 
+  (10^(-0.40)*(1/1000^0.37)*Data_Animal_de_pd['massAvg']^(0.37))/100 # cm /100 to m
+#### Deduced equation for MoI at the center of gravity (kilbourne data) ####
+Data_Animal_de_pd['MoI_G'] <- 
+  Data_Animal_de_pd['MoI']- Data_Animal_de_pd['Limb_mass']*
+  Data_Animal_de_pd['CoM']^2
+
+#### Moment of inertia in the at the almost elbow ####
+Data_Animal_de_pd['MoI_H'] <- 
+  Data_Animal_de_pd['MoI_G']+ 
+  Data_Animal_de_pd['Limb_mass']*
+  (Data_Animal_de_pd['Long_m']-Data_Animal_de_pd['CoM'])^2
+
+#### Angular acceleration of the elbow ####
+Data_Animal_de_pd['Alpha'] <- 
+  Data_Animal_de_pd['Mscl_Force']*Data_Animal_de_pd['MoA_m']/
+  (Data_Animal_de_pd['MoI_H']*0.6646727) 
+
+#### Angular velocity of the elbow ####
+Data_Animal_de_pd['Omg'] <- Data_Animal_de_pd['Alpha']*0.254/
+  (Data_Animal_de_pd['Sf']) # Angular velocity of the joint for only 0.254 of 
+# the period (assuming it is when we have the 
+# max speed)
+
+#### Sliding velocity  ####
+Data_Animal_de_pd['Vsup'] <- Data_Animal_de_pd['Omg']*
+  Data_Animal_de_pd['Dmed_m']/2
+
 
 # ALL and MASS ####
 Long.SMA <- getsma(Long, massAvg, Data_Animal_de_pd, 1/3, TRUE)
@@ -5819,4 +5855,83 @@ Data_Animal_de_pd <-
 #summary(Data_Bone)
 
 
+#  Morphotype and All ####
+plot(Morphotype~massAvg, log = "x", data = Data_Animal_de_pd)
 
+plot(Morphotype~Long, data = Data_Animal_de_pd)
+Data_Animal_de_pd['Long_esp'] <- Data_Animal_de_pd['Long']/Data_Animal_de_pd['massAvg']
+plot(Morphotype~Long_esp, log = "x",data = Data_Animal_de_pd)
+
+Data_Animal_de_pd['Rmax_Rmin'] <- Data_Animal_de_pd['Rmax']/Data_Animal_de_pd['Rmin']
+Data_Animal_de_pd['Rmax_esp'] <- Data_Animal_de_pd['Rmax']/Data_Animal_de_pd['massAvg']
+plot(Morphotype~Rmax_Rmin, data = Data_Animal_de_pd)
+plot(Morphotype~Rmax_esp, log = "x", data = Data_Animal_de_pd)
+
+plot(Morphotype~Rmin, data = Data_Animal_de_pd)
+Data_Animal_de_pd['Rmin_esp'] <- Data_Animal_de_pd['Rmin']/Data_Animal_de_pd['massAvg']
+plot(Morphotype~Rmin_esp, log = "x", data = Data_Animal_de_pd)
+
+plot(Morphotype~Rmed, data = Data_Animal_de_pd)
+Data_Animal_de_pd['Rmed_esp'] <- Data_Animal_de_pd['Rmed']/Data_Animal_de_pd['massAvg']
+plot(Morphotype~Rmed_esp, log = "x", data = Data_Animal_de_pd)
+
+plot(Morphotype~angeqv, log="x", data = Data_Animal_de_pd)
+Data_Animal_de_pd['angeqv_esp'] <- Data_Animal_de_pd['angeqv']/Data_Animal_de_pd['massAvg']
+plot(Morphotype~angeqv_esp, log = "x", data = Data_Animal_de_pd)
+
+plot(Morphotype~Maxspeed_ms, data = Data_Animal_de_pd)
+Data_Animal_de_pd['Maxspeed_ms_esp'] <- Data_Animal_de_pd['Maxspeed_ms']/Data_Animal_de_pd['massAvg']
+plot(Morphotype~Mscl_Force_esp, log = "x", data = Data_Animal_de_pd)
+
+plot(Morphotype~speedHirt_ms, data = Data_Animal_de_pd)
+Data_Animal_de_pd['speedHirt_ms_esp'] <- Data_Animal_de_pd['speedHirt_ms']/Data_Animal_de_pd['massAvg']
+plot(Morphotype~speedHirt_ms_esp, log = "x", data = Data_Animal_de_pd)
+
+plot(Morphotype~Pry_Area_m, data = Data_Animal_de_pd)
+Data_Animal_de_pd['Pry_Area_m_esp'] <- Data_Animal_de_pd['Pry_Area_m']/Data_Animal_de_pd['massAvg']
+plot(Morphotype~Pry_Area_m_esp, log = "x", data = Data_Animal_de_pd)
+
+plot(Morphotype~Sf, data = Data_Animal_de_pd)
+Data_Animal_de_pd['Sf_esp'] <- Data_Animal_de_pd['Sf']/Data_Animal_de_pd['massAvg']
+plot(Morphotype~Sf_esp, log = "x", data = Data_Animal_de_pd)
+
+plot(Morphotype~Mscl_Force, log="x", data = Data_Animal_de_pd)
+Data_Animal_de_pd['Mscl_Force_esp'] <- Data_Animal_de_pd['Mscl_Force']/Data_Animal_de_pd['massAvg']
+plot(Morphotype~Mscl_Force_esp, log = "x", data = Data_Animal_de_pd)
+
+plot(Morphotype~MoI, data = Data_Animal_de_pd)
+Data_Animal_de_pd['MoI_esp'] <- Data_Animal_de_pd['MoI']/Data_Animal_de_pd['massAvg']
+plot(Morphotype~MoI_esp, log = "x", data = Data_Animal_de_pd)
+
+plot(Morphotype~Limb_mass, data = Data_Animal_de_pd)
+Data_Animal_de_pd['Limb_mass_esp'] <- Data_Animal_de_pd['Limb_mass']/Data_Animal_de_pd['massAvg']
+plot(Morphotype~Limb_mass_esp, log = "x", data = Data_Animal_de_pd)
+
+plot(Morphotype~CoM, data = Data_Animal_de_pd)
+Data_Animal_de_pd['CoM_esp'] <- Data_Animal_de_pd['CoM']/Data_Animal_de_pd['massAvg']
+plot(Morphotype~Limb_mass_esp, log = "x", data = Data_Animal_de_pd)
+
+plot(Morphotype~MoI_G, data = Data_Animal_de_pd)
+Data_Animal_de_pd['MoI_G_esp'] <- Data_Animal_de_pd['MoI_G']/Data_Animal_de_pd['massAvg']
+plot(Morphotype~Limb_mass_esp, log = "x", data = Data_Animal_de_pd)
+
+plot(Morphotype~MoA_m, data = Data_Animal_de_pd)
+Data_Animal_de_pd['MoA_m_esp'] <- Data_Animal_de_pd['MoA_m']/Data_Animal_de_pd['massAvg']
+plot(Morphotype~MoA_m_esp, log = "x", data = Data_Animal_de_pd)
+
+plot(Morphotype~MoI_H, log = "x", data = Data_Animal_de_pd)
+Data_Animal_de_pd['MoI_H_esp'] <- Data_Animal_de_pd['MoI_H']/Data_Animal_de_pd['massAvg']
+plot(Morphotype~MoI_H_esp, log = "x", data = Data_Animal_de_pd)
+
+plot(Morphotype~Alpha, log="x", data = Data_Animal_de_pd)
+Data_Animal_de_pd['Alpha_esp'] <- Data_Animal_de_pd['Alpha']/Data_Animal_de_pd['massAvg']
+plot(Morphotype~Alpha_esp, log = "x", data = Data_Animal_de_pd)
+
+plot(Morphotype~Omg, log = "x", data = Data_Animal_de_pd)
+Data_Animal_de_pd['Omg_esp'] <- Data_Animal_de_pd['Omg']/Data_Animal_de_pd['massAvg']
+plot(Morphotype~Omg_esp, log = "x", data = Data_Animal_de_pd)
+
+
+
+Data_Animal_de_pd['VratioP'] <- Data_Animal_de_pd['Vsup']/Data_Animal_de_pd['P_eq']
+plot(VratioP~massAvg, log = "xy", data = Data_Animal_de_pd)
