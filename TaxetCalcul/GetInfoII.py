@@ -7,19 +7,24 @@ from Func_Regre import *
 import pandas as pd
 import math
 
+# for speed based on Hirt equation: 
+# A general scaling law reveals why the largest animals are not the fastest 2017 
 poptHirt = PopHirt()
+
+# To get the names order and families
 ncbi = NCBITaxa()
 # ncbi.update_taxonomy_database()
 
 # Mammals Orders:
 Orders= ['Monotremata', 'Didelphimorphia', 'Microbiotheria', 'Paucituberculata', 'Dasyuromorphia', 'Peramelemorphia', 'Notoryctemorphia', 'Diprotodontia', 'Afrosoricida', 'Macroscelidea', 'Tubulidentata', 'Hyracoidea', 'Proboscidea', 'Sirenia', 'Cingulata', 'Pilosa', 'Scandentia', 'Dermoptera', 'Primates', 'Lagomorpha', 'Erinaceomorpha', 'Soricomorpha', 'Chiroptera', 'Pholidota', 'Carnivora', 'Perissodactyla', 'Artiodactyla', 'Cetacea', 'Rodentia']
 
+# Mammals Families:
 Families=['Ornithorhynchidae', 'Tachyglossidae', 'Didelphidae', 'Microbiotheria', 'Paucituberculata', 'Dasyuridae', 'Myrmecobiidae', 'Thylacinidae', 'Malleodectidae', 'Peramelidae', 'Chaeropodidae', 'Peroryctidae', 'Notoryctidae', 'Phascolarctidae', 'Vombatidae', 'Phalangeridae', 'Potoroidae', 'Macropodidae', 'Burramyidae', 'Pseudocheiridae', 'Petauridae', 'Tarsipedidae', 'Acrobatidae', 'Hypsiprymnodontidae', 'Chrysochloridae', 'Tenrecidae', 'Macroscelididae', 'Orycteropodidae', 'Procaviidae', 'Pliohyracidae', 'Elephantidae', 'Dugongidae', 'Trichechidae', 'Prorastomidae', 'Chlamyphoridae', 'Dasypodidae', 'Cyclopedidae', 'Myrmecophagidae', 'Choloepodidae', 'Bradypodidae', 'Megalonychidae',  'Tupaiidae', 'Ptilocercidae',  'Cynocephalidae', 'Cheirogaleidae', 'Lemuridae', 
 'Lepilemuridae', 'Indriidae', 'Daubentoniidae' , 'Lorisidae', 'Galagidae', 'Tarsiidae','Cebidae', 'Aotidae', 'Pitheciidae', 'Atelidae', 'Cercopithecidae', 'Hylobatidae', 'Hominidae', 'Leporidae', 'Ochotonidae', 'Prolagidae', 'Erinaceidae', 'Solenodontidae', 'Soricidae', 'Talpidae', 
 'Vespertilionidae', 'Thyropteridae', 'Rhinopomatidae', 'Rhinolophidae', 'Pteropodidae', 'Phyllostomidae', 'Nycteridae', 'Noctilionidae', 'Natalidae', 'Myzopodidae', 'Mystacinidae', 'Mormoopidae', 'Molossidae', 'Megadermatidae', 'Hipposideridae', 'Furipteridae', 'Emballonuridae', 'Craseonycteridae', 'Manidae', 'Felidae', 'Viverridae', 'Eupleridae', 'Nandiniidae', 'Herpestidae', 'Hyaenidae', 'Canidae', 'Ursidae', 'Odobenidae' , 'Otariidae', 'Phocidae', 'Mustelidae', 'Procyonidae', 'Ailuridae', 'Equidae', 'Tapiridae', 'Rhinocerotidae', 'Suidae', 'Tayassuidae', 'Hippopotamidae', 'Camelidae', 'Tragulidae', 'Moschidae', 'Cervidae', 'Antilocapridae', 'Giraffidae', 'Bovidae', 'Balaenidae', 'Balaenopteridae', 'Eschrichtiidae', 'Cetotheriidae', 'Delphinidae', 'Monodontidae', 'Phocoenidae', 'Physeteridae', 'Platanistidae', 'Iniidae', 'Ziphiidae', 'Aplodontiidae', 'Sciuridae', 'Gliridae', 'Castoridae', 'Heteromyidae', 'Geomyidae', 'Dipodidae', 'Platacanthomyidae', 'Spalacidae', 'Calomyscidae', 'Nesomyidae', 'Cricetidae', 'Muridae', 'Anomaluridae', 'Pedetidae', 'Ctenodactylidae', 'Bathyergidae', 'Hystricidae', 'Petromuridae', 'Thryonomyidae', 'Erethizontidae', 'Chinchillidae', 'Dinomyidae', 'Caviidae', 'Dasyproctidae', 'Cuniculidae', 'Ctenomyidae', 'Octodontidae', 'Abrocomidae', 'Echimyidae', 'Myocastoridae', 'Capromyidae', 'Heptaxodontidae', 'Hydrochaeridae']
 
 # BONES
-# bones
+# class bones
 class bone:
     def __init__(self, ID, NCBI, side, Long, morph_type, Morphotype): # latter more properties will be added
         self.ID = ID
@@ -48,7 +53,8 @@ class bone:
         else:
             self.speedHirt = float('nan')
 
-# Species
+# BONES SPECIES
+# Class species 
 class Specie:
     def __init__(self, NCBI, massI, massS, massAvg, refmass, Maxspeed, refspeed, spdMissing, Stance, Diet):
         self.NCBI = NCBI

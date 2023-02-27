@@ -1,0 +1,111 @@
+Sci name,NCBI,mass inf kg,mass sup kg,Avg mass kg,refMass,Speed max km/hr,refSpeed,stance,Diet
+Didelphis virginiana,9267,1.00,9.00,5.00,https://www.gbif.org/,7.00,https://www.gbif.org/,Plantigrade,omnivore
+Didelphis marsupialis,9268,,,1.53,ADW,,,Plantigrade,omnivore
+Dasyurus hallucatus,9280,0.30,0.90,0.60,ADW,24.14,https://a-z-animals.com/,Plantigrade,carnivore
+Dasyurus maculatus,9281,1.80,7.00,4.40,ADW,24.00,https://animalia.bio/,Plantigrade,carnivore
+Antechinus stuartii,9283,,,0.03,Iriarte-diaz_2002_differential scaling of locomotor performance in small and large mammals,17.38,Hirt_2017_a general scaling law,Plantigrade,carnivore
+Sminthopsis crassicaudata,9301,,,0.02,Iriarte-diaz_2002_differential scaling of locomotor performance in small and large mammals,9.70,Garland_1988_Comparative locomotor performance of marsupial,Digitigrade,carnivore
+Sarcophilus harrisii,9305,4.00,12.00,8.00,ADW,10.00,Garland_1988_Comparative locomotor performance of marsupial,Plantigrade,carnivore
+Trichosurus vulpecula (Didelphis vulpecula Kerr),9337,,,4.30,Christansen_1999_Scaling of the Limb Long Bones to Body Mass in Terrestrial Mammals,3.90,White 1990,Plantigrade,omnivore
+Canis lupus,9612,18.00,80.00,49.00,Mammals Species,63.97,Christansen_2002_Locomotion in terrestrial mammals,Digitigrade,carnivore
+Canis latrans,9614,,,12.30,Christansen_2002_Locomotion in terrestrial mammals,55.98,Christansen_2002_Locomotion in terrestrial mammals,Digitigrade,carnivore
+Vulpes vulpes,9627,,,5.50,Christansen_2002_Locomotion in terrestrial mammals,47.97,Christansen_2002_Locomotion in terrestrial mammals,Digitigrade,omnivore
+Helarctos malayanus,9634,30.00,80.00,55.00,https://www.gbif.org/,48.28,https://a-z-animals.com/,Plantigrade,omnivore
+Melursus ursinus,9636,55.00,140.00,97.50,ADW,,,Plantigrade,omnivore
+Tremarctos ornatus,9638,20.00,120.00,70.00,Mammals Species,48.00,https://animalia.bio/,Plantigrade,omnivore
+Ursus arctos,9644,,,251.30,Iriarte-diaz_2002_differential scaling of locomotor performance in small and large mammals,47.97,Christansen_2002_Locomotion in terrestrial mammals,Plantigrade,carnivore
+Procyon lotor,9654,,,7.50,Christansen_2002_Locomotion in terrestrial mammals,24.00,Garland_1983_the relation between max running and mass,Plantigrade,omnivore
+Felis catus,9685,4.10,5.40,4.75,ADW,48.00,Hirt_2017_a general scaling law,Digitigrade,carnivore
+Panthera leo,9689,,,188.00,Mammals Species,54.95,Christansen_2002_Locomotion in terrestrial mammals,Digitigrade,carnivore
+Panthera pardus,9691,,,52.40,Iriarte-diaz_2002_differential scaling of locomotor performance in small and large mammals,59.98,Christansen_2002_Locomotion in terrestrial mammals,Digitigrade,carnivore
+Panthera tigris,9694,100.00,258.00,179.00,Mammals Species,55.98,Christansen_2002_Locomotion in terrestrial mammals,Digitigrade,carnivore
+Puma concolor (felis concolor),9696,35.00,65.00,50.00,Mammals Species,48.28,https://a-z-animals.com/,Digitigrade,carnivore
+Elephas maximus,9783,2000.00,6000.00,4000.00,ADW,26.00,Garland_1982_the relation between max running and mass,Ungulates,herbivore
+Equus zebra,9791,,,300.00,Garland_1982_the relation between max running and mass,64.00,Garland_1982_the relation between max running and mass,Ungulates,herbivore
+Equus caballus,9796,,,529.66,Christansen_2002_Locomotion in terrestrial mammals,63.97,Christansen_2002_Locomotion in terrestrial mammals,Ungulates,herbivore
+Tapirus indicus,9802,,,317.00,Christiansen_2002_Mass allometry of the appendicular skeleton in terrestrial mammals,48.28,https://a-z-animals.com/,Ungulates,herbivore
+Diceros bicornis,9805,,,1400.00,Garland_1982_the relation between max running and mass,45.00,Iriarte-diaz_2002_differential scaling of locomotor performance in small and large mammals,Ungulates,herbivore
+Ceratotherium simum,9807,1000.00,3600.00,2300.00,ADW,39.99,Christansen_2002_Locomotion in terrestrial mammals,Ungulates,herbivore
+Rhinoceros unicornis,9809,1599.00,2132.00,1865.50,Mammals Species,48.28,https://a-z-animals.com/,Ungulates,herbivore
+Orycteropus afer,9818,40.00,82.00,61.00,ADW,40.23,https://a-z-animals.com/,Digitigrade,carnivore
+Camelus dromedarius,9838,400.00,600.00,500.00,Mammals Species,52.00,Christansen_2002_Locomotion in terrestrial mammals,Ungulates,herbivore
+Lama glama,9844,110.00,220.00,165.00,https://www.gbif.org/,45.06,https://a-z-animals.com/,Ungulates,herbivore
+Cervus elaphus,9860,,,300.00,Garland_1982_the relation between max running and mass,71.94,Christansen_2002_Locomotion in terrestrial mammals,Ungulates,herbivore
+Odocoileus hemionus,9872,43.00,150.00,96.50,ADW,63.97,Christansen_2002_Locomotion in terrestrial mammals,Ungulates,herbivore
+Odocoileus virginianus,9874,57.00,137.00,97.00,ADW,63.97,Christansen_2002_Locomotion in terrestrial mammals,Ungulates,herbivore
+Antilocapra americana,9891,50.00,57.00,53.50,Mammals Species,87.10,Christansen_2002_Locomotion in terrestrial mammals,Ungulates,herbivore
+Giraffa camelopardalis,9894,1180.00,1930.00,1555.00,ADW,55.98,Christansen_2002_Locomotion in terrestrial mammals,Ungulates,herbivore
+Ammotragus lervia,9899,63.50,145.00,104.25,Mammals Species,,,Ungulates,herbivore
+Bison bison,9901,318.00,907.00,612.50,Mammals Species,52.00,Christansen_2002_Locomotion in terrestrial mammals,Ungulates,herbivore
+Bos javanicus,9906,600.00,800.00,700.00,ADW,,,Ungulates,herbivore
+Bos taurus,9913,147.00,1363.00,755.00,ADW,,,Ungulates,herbivore
+Boselaphus tragocamelus,9917,169.00,288.00,228.50,Mammals Species,47.97,Christansen_2002_Locomotion in terrestrial mammals,Ungulates,herbivore
+Capra hircus,9925,,,45.00,ADW,,,Ungulates,herbivore
+Connochaetes taurinus,9927,,,179.89,Christansen_2002_Locomotion in terrestrial mammals,79.98,Christansen_2002_Locomotion in terrestrial mammals,Ungulates,herbivore
+Ovis aries,9940,,,22.65,Garland_1988_Comparative locomotor performance of marsupial,11.20,Garland_1988_Comparative locomotor performance of marsupial,Ungulates,herbivore
+Taurotragus oryx,9945,317.00,942.00,629.50,Mammals Species,69.98,Christansen_2002_Locomotion in terrestrial mammals,Ungulates,herbivore
+Oryx gazella,9958,190.00,240.00,215.00,https://www.gbif.org/,60.00,https://animalia.bio/,Ungulates,herbivore
+Kobus ellipsiprymnus,9962,160.00,300.00,230.00,https://www.gbif.org/,50.00,https://africafreak.com/waterbuck,Ungulates,herbivore
+Capricornis sp,9966,25.00,150.00,87.50,www.wikipedia.com,,,Ungulates,herbivore
+Syncerus caffer,9970,,,620.00,Iriarte-diaz_2002_differential scaling of locomotor performance in small and large mammals,57.02,Christansen_2002_Locomotion in terrestrial mammals,Ungulates,herbivore
+Marmota monax,9995,,,4.00,Iriarte-diaz_2002_differential scaling of locomotor performance in small and large mammals,16.00,Garland_1982_the relation between max running and mass,Plantigrade,herbivore
+Hystrix cristata,10137,10.00,30.00,20.00,ADW,,,Plantigrade,herbivore
+Hydrochoerus hydrochaeris,10149,35.00,66.00,50.50,Iriarte-diaz_2002_differential scaling of locomotor performance in small and large mammals,35.00,https://currumbinsanctuary.com.au/stories/blogs/10-facts-about-capybaras-worlds-largest-rodents,Digitigrade,herbivore
+Myocastor coypus,10157,5.00,10.00,7.50,ADW,,,Plantigrade,herbivore
+Bubalus depressicornis,27596,90.00,225.00,157.50,ADW,,,Ungulates,herbivore
+Ursus maritimus,29073,,,265.00,Iriarte-diaz_2002_differential scaling of locomotor performance in small and large mammals,40.00,Garland_1993_Does metatarsal/femur ratio predict maximal running speed,Plantigrade,carnivore
+Vombatus ursinus,29139,22.00,40.00,31.00,https://www.gbif.org/,40.23,https://a-z-animals.com/,Plantigrade,herbivore
+Bos frontalis,30520,590.00,941.00,765.50,Mammals Species,,,Ungulates,herbivore
+Bos grunniens,30521,300.00,1000.00,650.00,ADW,,,Ungulates,herbivore
+Taxidea taxus,30554,4.00,12.00,8.00,ADW,30.00,https://a-z-animals.com/,Plantigrade,carnivore
+Lasiorhinus latifrons,30668,17.50,36.00,26.75,https://www.gbif.org/,40.00,https://animalia.bio/,Plantigrade,herbivore
+Canis simensis,32534,11.20,19.30,15.25,ADW,48.28,https://www.animalspot.net,Digitigrade,carnivore
+Acinonyx jubatus,32536,,,39.00,Christansen_2002_Locomotion in terrestrial mammals,104.95,Christansen_2002_Locomotion in terrestrial mammals,Digitigrade,carnivore
+Leopardus pardalis,32538,6.60,15.50,11.05,https://www.gbif.org/,61.16,https://a-z-animals.com/,Digitigrade,carnivore
+Erethizon dorsatum,34844,5.00,14.00,9.50,ADW,,,Plantigrade,herbivore
+Rupicapra rupicapra,34869,,,38.02,Christansen_2002_Locomotion in terrestrial mammals,50.00,Christansen_2002_Locomotion in terrestrial mammals,Ungulates,herbivore
+Naemorhedus goral,34871,25.00,30.00,27.50,ADW,,,Ungulates,herbivore
+Oreamnos americanus,34873,60.00,115.00,87.50,https://www.gbif.org/,33.04,Christansen_2002_Locomotion in terrestrial mammals,Ungulates,herbivore
+Saiga tatarica,34875,,,35.00,Garland_1982_the relation between max running and mass,80.00,Garland_1983_the relation between max running and mass,Ungulates,herbivore
+Ovibos moschatus,37176,180.00,400.00,290.00,ADW,39.99,Christansen_2002_Locomotion in terrestrial mammals,Ungulates,herbivore
+Hemitragus jemlahicus,37179,55.00,124.00,89.50,https://www.gbif.org/,,,Ungulates,herbivore
+Hippotragus equinus,37186,215.00,300.00,257.50,https://www.gbif.org/,55.98,Christansen_2002_Locomotion in terrestrial mammals,Ungulates,herbivore
+Gazella dorcas,37751,15.00,18.00,16.50,Mammals Species,79.98,Christansen_2002_Locomotion in terrestrial mammals,Ungulates,herbivore
+Oryx leucoryx,39411,116.00,206.00,161.00,Mammals Species,7.50,Gallach_2015_ Oryx leucoryx,Ungulates,herbivore
+Gulo gulo,48420,6.00,18.00,12.00,http://wolverinefoundation.org/,48.00,ADW,Plantigrade,carnivore
+Cephalophus silvicultor,50347,45.00,80.00,62.50,ADW,,,Ungulates,herbivore
+Castor canadensis,51338,11.00,32.00,21.50,ADW,,,Plantigrade,herbivore
+Myrmecobius fasciatus,55782,,,0.48,Iriarte-diaz_2002_differential scaling of locomotor performance in small and large mammals,33.00,Garland_1988_Comparative locomotor performance of marsupial,Plantigrade,carnivore
+Tapirus bairdii,56117,150.00,300.00,225.00,ADW,40.00,Garland_1993_Does metatarsal/femur ratio predict maximal running speed,Ungulates,herbivore
+Addax nasomaculatus,59515,60.00,125.00,92.50,Mammals Species,,,Ungulates,herbivore
+Alcelaphus buselaphus,59517,,,149.97,Christansen_2002_Locomotion in terrestrial mammals,69.98,Christansen_2002_Locomotion in terrestrial mammals,Ungulates,herbivore
+Antidorcas marsupialis,59523,33.00,46.00,39.50,ADW,87.90,Christansen_2002_Locomotion in terrestrial mammals,Ungulates,herbivore
+Antilope cervicapra,59525,32.00,43.00,37.50,ADW,94.84,Christansen_2002_Locomotion in terrestrial mammals,Ungulates,herbivore
+Ourebia ourebi,59536,,,14.49,Christansen_2002_Locomotion in terrestrial mammals,50.00,Christansen_2002_Locomotion in terrestrial mammals,Ungulates,herbivore
+Pseudois nayaur,59542,35.00,75.00,55.00,Mammals Species,,,Ungulates,herbivore
+Redunca arundinum (Antilope arundinu),59554,39.00,95.00,67.00,https://www.gbif.org/,,,Ungulates,herbivore
+Felis margarita,61378,1.40,3.40,2.40,Mammals Species,35.00,Mammals Species,Digitigrade,carnivore
+Lynx rufus*,61384,5.80,13.30,9.55,https://www.gbif.org/,54.72,https://a-z-animals.com/,Digitigrade,carnivore
+Caracal caracal,61394,5.80,22.00,13.90,Mammals Species,80.47,https://a-z-animals.com/,Digitigrade,carnivore
+Leptailurus serval,61405,9.00,18.00,13.50,ADW,64.37,https://a-z-animals.com/,Digitigrade,carnivore
+Neofelis nebulosa,61452,11.00,23.00,17.00,ADW,64.37,https://a-z-animals.com/,Digitigrade,carnivore
+Echymipera rufescens,65611,0.50,2.23,1.36,ADW,,,Plantigrade,omnivore
+Isoodon obesulus,65612,,,0.72,Garland_1988_Comparative locomotor performance of marsupial,14.30,Garland_1988_Comparative locomotor performance of marsupial,Plantigrade,omnivore
+Tragelaphus scriptus,66440,24.00,80.00,52.00,https://www.gbif.org/,,,Ungulates,herbivore
+Oreotragus oreotragus,66444,8.00,18.00,13.00,ADW,,,Ungulates,herbivore
+Speothos venaticus,68741,4.00,7.00,5.50,Mammals Species,,,Digitigrade,carnivore
+Eudorcas thomsonii,69308,15.00,35.00,25.00,ADW,65.00,Hirt_2017_a general scaling law,Ungulates,herbivore
+Tupaia tana,70687,0.20,0.30,0.25,https://www.gbif.org/,,,Plantigrade,carnivore
+Tetracerus quadricornis,73823,17.00,22.00,19.50,Mammals Species,,,Ungulates,herbivore
+Dicerorhinus sumatrensis,89632,800.00,2000.00,1400.00,ADW,48.28,https://a-z-animals.com/,Ungulates,herbivore
+Genetta genetta,94190,1.40,6.00,3.70,https://www.gbif.org/,,,Digitigrade,carnivore
+Rhinoceros sondaicus,102233,1200.00,1500.00,1350.00,Mammals Species,42.00,https://animalia.bio/,Ungulates,herbivore
+Caluromysiops irrupta,126286,,,0.45,ADW,,,Plantigrade,omnivore
+Tupaia minor,143289,0.04,0.05,0.04,https://www.gbif.org/,,,Plantigrade,omnivore
+Tolypeutes matacus,183749,1.00,2.00,1.50,https://www.gbif.org/,48.28,https://a-z-animals.com/,Ungulates,omnivore
+Acrobates pygmaeus,190720,0.01,0.01,0.01,Makarov_2021_Running of the Acrobatespygmaeus,6.34,Makarov_2021_Running of the Acrobatespygmaeus,Plantigrade,omnivore
+Urogale everetti,192726,,,0.35,ADW,,,Plantigrade,omnivore
+Ptilocercus lowii,320338,0.05,0.06,0.06,https://www.gbif.org/,,,Plantigrade,omnivore
+Tupaia palawanensis,320359,0.05,0.30,0.18,ADW,,,Plantigrade,carnivore
+Hemibelideus lemuroides,596256,0.75,1.14,0.95,ADW,,,Plantigrade,herbivore
+Geocapromys brownii,1543402,1.00,2.00,1.50,ADW,,,Plantigrade,herbivore

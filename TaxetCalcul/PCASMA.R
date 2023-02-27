@@ -1002,7 +1002,7 @@ MapDmed <- contMap(phy.dat,
                    ftype = "i",
                    outline = T)
 n <- length(MapDmed$cols)
-MapDmed <- setMap(MapDmed,turbo(n))
+MapDmed <- setMap(MapDmed,viridis(n))
 
 # data for the arcs
 tipis <- MapDmed$tree$tip.label

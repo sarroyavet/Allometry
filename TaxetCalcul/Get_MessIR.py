@@ -15,6 +15,7 @@ delta_theta = 90 # number of angles
 knots = 2
 imgpath = '/home/kale/Documents/Allometry/DATA/DistalImg'
 
+# class surface: for each distal humerus surface
 class Surface():
     def __init__(self, ID, file, scale, morph_type):
         self.ID = ID
