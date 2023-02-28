@@ -25,7 +25,6 @@ Aix Marseille Univ, CNRS, ISM, Marseille, France
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -60,36 +59,88 @@ The codes here are part of the results from the research paper: *Size does not m
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Assure that the following packages from <a href="# Usage"> Prerequisites
-</a> of python and R are installed before running the code. 
+Assure that the following packages from <a href="#prerequisites">Prerequisites</a> of Python and R are installed before running the code. Also, be sure to have track of the location of the [".vtk" files](DATA/For_publishing/Distal) of the distal surface of the humeri, as well as the files [New_tax.csv](DATA/For_publishing/New_tax.csv) and [3DfilesDb.csv](DATA/For_publishing/3DfilesDb.csv), as they are the inputs for the Python script.
 
 ### Prerequisites
+#### *For Python*
+We developed the Python script for the version 3.6.9.
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+* json
   ```sh
-  npm install npm@latest -g
+  pip3 install json
+  ```
+* NumPy
+  ```sh
+  pip3 install numpy
+  ```
+* cmath
+  ```sh
+  pip3 install cmath
+  ```
+* csv
+  ```sh
+  pip3 install csv
+  ```
+* Pandas
+  ```sh
+  pip3 install pandas
+  ```
+  Be sure to previously install NumPy.
+
+* mlxtend
+  ```sh
+  pip3 install mlxtend
+  ```
+  Be sure to previously install the external dependencies for this package, including NumPy, Pandas, Matplotlib and Scikit-learn. 
+
+* cylinder_fitting
+  ```sh
+  pip3 install cylinder_fitting
+  ```
+  Be sure to previously install the external dependencies for this package: Numpy and SciPy.
+* vtk
+  ```sh
+  pip3 install vtk
+  ```
+  Be sure to previously install the external dependencies for this package, including OpenGL, CMake, and Python development headers. For more information on installing VTK, please refer to the [VTK installation instructions](https://gitlab.kitware.com/vtk/vtk/-/blob/master/Documentation/dev/build.md).
+
+* Matplotlib
+  ```sh
+  pip3 install matplotlib
   ```
 
-### Installation
+  Be sure to previously install the external dependencies for this package, including NumPy, libpng, freetype, and Python development header. For more information on installing Matplotlib, please refer to the [Matplotlib installation instructions](https://matplotlib.org/stable/users/installing/index.html).
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+* SciPy
+  ```sh
+  pip3 install scipy
+  ```
+  Be sure to previously install the external dependencies for this package, including NumPy, BLAS, LAPACK, and CMake. For more information on installing SciPy, please refer to the [SciPy installation instructions](https://scipy.org/install/).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+* ete3
+  ```sh
+  pip3 install ete3
+  ```
+  Be sure to previously install the external dependencies for this package, including NumPy, SciPy, and Matplotlib. For more information on installing ETE Toolkit, please refer to the [ETE Toolkit installation instructions](http://etetoolkit.org/download/).
 
+#### *For R*
+We developed the R script for the version 4.2.2 Patched (2022-11-10 r83330).
 
+* ape
+* caper
+* dplyr
+* mosaic
+* phytools
+* Polychrome
+* reticulate
+* rlang
+* smatr
+* viridis
+
+To install these packages and their dependencies, you can use the following code in R:
+  ```sh
+  install.packages(c("ape", "caper", "dplyr", "mosaic", "phytools", "Polychrome", "reticulate", "rlang", "smatr", "viridis"))
+  ```
 
 <!-- USAGE EXAMPLES -->
 ## Usage

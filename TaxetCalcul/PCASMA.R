@@ -3,31 +3,15 @@ rm(list = ls())
 
 library(reticulate) # import python scripts to R
 # use_python("/usr/bin/python3.6", required = T)
-library(FactoMineR)
-library(devtools)
-library(ggbiplot) # to plot PCA
-library(smatr) # Standardized Major Axis Regression (SMA ou RMA ou Model II)
-library(missMDA) # to do PCA analysis with missinf values
-library(dplyr)
-library(nls2)
-library(minpack.lm)
-library(mosaic)
 library(ape)
-library(phylotools)
-library(phytools)
-library(geiger)
 library(caper)
-library(nlme)
-library(jtools)
-library(reshape2)
-library(viridis)
-library(ggtree)
-library(data.table)
-library(wesanderson)
-library(RColorBrewer)
-library(ggsci)
+library(dplyr)
+library(mosaic)
+library(phytools)
 library(Polychrome)
 library(rlang)
+library(smatr) # Standardized Major Axis Regression (SMA ou RMA ou Model II)
+library(viridis)
 
 pd <- import('pandas')
 
@@ -136,7 +120,7 @@ getsma <- function(P1, P2, dataf, slptst, Robust){
                             log = "xy",
                             data = dataf,
                             slope.test = slptst, 
-                            robust=Robust
+                            robust = Robust
   ))
   return(SMAt)
   }
@@ -215,9 +199,9 @@ subs <- function(x){
     # if (an == "Ceratotherium simum cottoni"){
     #   names <- append(names, 'Ceratotherium simum')
     # }else 
-      if (an == "Neogale vison"){
+      if (an == "Neogale vison") {
       names <- append(names, 'Neovison vison')
-    }else if (an == "Equus asinus"){
+    }else if (an == "Equus asinus") {
       names <- append(names, 'Equus africanus')
     }else{
       names <- append(names, an)
@@ -1190,8 +1174,6 @@ legend("bottomleft",
 
 dev.off()
 
-
-
 # to check the names of each tip
 H = 4
 W = H*2
@@ -1205,25 +1187,3 @@ fanCladogram(phy.dat,lwd = 6,part = 0.5,fsize = 0.8)
 fanCladogram(MapDmed$tree,lwd = 4,colors = MapDmed$cols,part = 0.5,
                       fsize = 0.8,add = TRUE)
 dev.off()
-
-
-####### de aqui pa allà, noo###
-#### Draw the boxplots ####
-slpdata <- list()
-for (p1p2 in parampgls) {
-  slp = sym(paste('slp',p1p2, sep = ''))
-  slpt = paste('slp',p1p2, sep = '')
-  tmp <- get(slp)
-  slpdata[[slpt]] <- tmp
-}
-slopes.df <- melt(slpdata)
-stripchart(slopes.df$value ~ slopes.df$L1, 
-           vertical = TRUE, 
-           method = "jitter",
-           pch = 19, 
-           add = FALSE, 
-           col = 1:length(levels(slopes.df$L1)))
-boxplot(value ~ L1, data = slopes.df)
-
-
-#

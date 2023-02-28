@@ -5935,3 +5935,45 @@ plot(Morphotype~Omg_esp, log = "x", data = Data_Animal_de_pd)
 
 Data_Animal_de_pd['VratioP'] <- Data_Animal_de_pd['Vsup']/Data_Animal_de_pd['P_eq']
 plot(VratioP~massAvg, log = "xy", data = Data_Animal_de_pd)
+
+
+
+
+
+
+####### de aqui pa allà, noo###
+#### Draw the boxplots ####
+# slpdata <- list()
+# for (p1p2 in parampgls) {
+#   slp = sym(paste('slp',p1p2, sep = ''))
+#   slpt = paste('slp',p1p2, sep = '')
+#   tmp <- get(slp)
+#   slpdata[[slpt]] <- tmp
+# }
+# slopes.df <- melt(slpdata)
+# stripchart(slopes.df$value ~ slopes.df$L1, 
+#            vertical = TRUE, 
+#            method = "jitter",
+#            pch = 19, 
+#            add = FALSE, 
+#            col = 1:length(levels(slopes.df$L1)))
+# boxplot(value ~ L1, data = slopes.df)
+
+
+#
+# library(data.table)
+# library(wesanderson)
+# library(reshape2)
+# library(FactoMineR)
+# library(devtools)
+# library(ggbiplot) # to plot PCA
+# library(missMDA) # to do PCA analysis with missinf values
+# library(nls2)
+# library(minpack.lm)
+# library(phylotools)
+# library(geiger)
+# library(nlme)
+# library(jtools)
+# library(ggtree)
+# library(RColorBrewer)
+# library(ggsci)
