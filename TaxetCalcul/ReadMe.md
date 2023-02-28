@@ -57,12 +57,11 @@ The codes here are part of the results from the research paper: *Size does not m
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Assure that the following packages from <a href="# Usage"> Prerequisites
+</a> of python and R are installed before running the code. 
 
 ### Prerequisites
 
@@ -199,7 +198,7 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 
 [papertitle]: Size does not matter: allometry reveals consistent pressure and sliding velocity in quadrupedal mammalian elbow
 
-[Python.png]: https://www.python.org/static/community_logos/python-logo.png
+[Python.png]: https://img.shields.io/badge/Python-0769AD?labelColor=blue?style=plastic&logo=python&logoColor=white
 [Python-url]: https://www.python.org/
-[R.png]: https://www.r-project.org/Rlogo.png
+[R.png]: https://img.shields.io/badge/R-0769AD?style=plastic&logo=R&logoColor=white
 [R-url]: https://www.r-project.org/
