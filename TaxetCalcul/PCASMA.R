@@ -304,21 +304,21 @@ for (p1p2 in parampgls) {
   }
 }
 
-##### SAVE ####
-parampgls <- list('Long', 'La', 'Dmed', 'Rmax', 'Rmin', 'DeltaR',
-                  'angeqv', 'Pry_Area_m', 'P_eq', 'Vsup_C')
-# save info, just in case
-for (p1p2 in parampgls) {
-  file1 = paste('/home/kale/Documents/Allometry/DATA/pgls/','Int',p1p2,'.rds', sep = '')
-  file2 = paste('/home/kale/Documents/Allometry/DATA/pgls/','slp',p1p2,'.rds', sep = '')
-  file3 = paste('/home/kale/Documents/Allometry/DATA/pgls/','lmb',p1p2,'.rds', sep = '')
-  int = sym(paste('Int',p1p2, sep = ''))
-  slp = sym(paste('slp',p1p2, sep = ''))
-  lmb = sym(paste('lmb',p1p2, sep = ''))
-  rlang::inject(saveRDS(!!int, file = file1))
-  rlang::inject(saveRDS(!!slp, file = file2))
-  rlang::inject(saveRDS(!!lmb, file = file3))
-}
+# ##### SAVE ####
+# parampgls <- list('Long', 'La', 'Dmed', 'Rmax', 'Rmin', 'DeltaR',
+#                   'angeqv', 'Pry_Area_m', 'P_eq', 'Vsup_C')
+# # save info, just in case
+# for (p1p2 in parampgls) {
+#   file1 = paste('/home/kale/Documents/Allometry/DATA/pgls/','Int',p1p2,'.rds', sep = '')
+#   file2 = paste('/home/kale/Documents/Allometry/DATA/pgls/','slp',p1p2,'.rds', sep = '')
+#   file3 = paste('/home/kale/Documents/Allometry/DATA/pgls/','lmb',p1p2,'.rds', sep = '')
+#   int = sym(paste('Int',p1p2, sep = ''))
+#   slp = sym(paste('slp',p1p2, sep = ''))
+#   lmb = sym(paste('lmb',p1p2, sep = ''))
+#   rlang::inject(saveRDS(!!int, file = file1))
+#   rlang::inject(saveRDS(!!slp, file = file2))
+#   rlang::inject(saveRDS(!!lmb, file = file3))
+# }
 
 ##### LOAD ####
 # parampgls <- list('Long', 'La', 'Dmed', 'Rmax', 'Rmin', 'DeltaR',

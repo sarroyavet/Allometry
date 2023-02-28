@@ -132,9 +132,22 @@ To install these packages and their dependencies, you can use the following code
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+### Python script
+To use this codes you should start with the python file [EspInfo.py](EspInfo.py), in that code assure that you have the correct directory for the variable `fileDir` (this variable should be the directory should contain the input files as well as the folder [Distal](/DATA/Distal) *.vtk* files of the distal humerus surfaces are). Additionally, the variables:
+<!-- input files -->
+#### Input Files:
+* *`espfile`* -> the data of the species included in the study [New_tax.csv](DATA/New_tax.csv).
+* *`D3fileDB`* ->  the data of the bones included in the study [3DfilesDb.csv](DATA/3DfilesDb.csv).
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+<!-- output files -->
+#### Output Files:
+* *`Spout`* -> an output file of the script in which the measurements are related to each species. This file is necessary for the second part which runs in R.
+* *`Bonesout`* -> an output file of the script in which the measurements are related to each bone.
+
+### R script:
+This script is used to define the allometric relationships of the distal humerus. In it, you should define the input directories: `Data_Animal_csv` and `Data_Animal_pd`. These files are output files of the Python script. 
+
+Also, you should consider modifying the variables `treesfile` (which is the location of the phylogenetic trees used in the study) and `ffile` in the different instances of the code (one where the histograms are stored and one where the plots of the phylogenetic trees are stored).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -164,37 +177,8 @@ This research was supported by French Research National Agency (Agence Nationale
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo_name/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/kalenia-márquez-flórez-5b686064/
-[product-screenshot]: images/screenshot.png
-
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
-
-
-
 [Python.png]: https://img.shields.io/badge/Python-0769AD?labelColor=blue?style=plastic&logo=python&logoColor=white
 [Python-url]: https://www.python.org/
 [R.png]: https://img.shields.io/badge/R-0769AD?style=plastic&logo=R&logoColor=white
