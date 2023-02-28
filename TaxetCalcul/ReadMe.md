@@ -46,7 +46,7 @@ The codes here are part of the results from the research paper: *Size does not m
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Assure that the following packages from <a href="#prerequisites">Prerequisites</a> of Python and R are installed before running the code. Also, be sure to have track of the location of the [".vtk" files](DATA/For_publishing/Distal) of the distal surface of the humeri, as well as the files [New_tax.csv](DATA/For_publishing/New_tax.csv) and [3DfilesDb.csv](DATA/For_publishing/3DfilesDb.csv), as they are the inputs for the Python script.
+Assure that the following packages from <a href="#prerequisites">Prerequisites</a> of Python and R are installed before running the code. Also, be sure to have track of the location of the [".vtk" files](DATA/Distal) of the distal surface of the humeri, as well as the files [New_tax.csv](DATA/New_tax.csv) and [3DfilesDb.csv](DATA/3DfilesDb.csv), as they are the inputs for the Python script.
 
 ### Prerequisites
 #### *For Python*
