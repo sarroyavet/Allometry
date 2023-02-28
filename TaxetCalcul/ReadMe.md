@@ -1,3 +1,6 @@
+<!-- PROJECT LOGO -->
+![alt text](BioDesignLogo.png)
+
 # ReadMe for TaxetCalcul folder
 
 This folder contains the code employed within the research paper: 
