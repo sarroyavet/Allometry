@@ -1,3 +1,6 @@
+<!-- PROJECT LOGO -->
+![alt text](BioDesignLogo.png)
+
 # ReadMe for DATA folder
 
 This folder contains the supplementary data for the research article: 
