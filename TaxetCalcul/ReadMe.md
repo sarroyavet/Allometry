@@ -5,7 +5,7 @@
 
 This folder contains the code employed within the research paper: 
 
-***Size does not matter: allometry reveals consistent pressure and sliding velocity in quadrupedal mammalian elbow***
+***Allometry reveals consistent pressure and sliding velocity in quadrupedal mammalian elbow***
 
 *Kalenia Marquez-Florez, Loïc Tadrist, Santiago Arroyave-Tobon, Jean-Marc Linares*
 
@@ -28,7 +28,7 @@ Aix Marseille Univ, CNRS, ISM, Marseille, France
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-The codes here are part of the results from the research paper: *Size does not matter: allometry reveals consistent pressure and sliding velocity in quadrupedal mammalian elbow*. This repository contains the Python and R scripts used within the project.
+The codes here are part of the results from the research paper: *Allometry reveals consistent pressure and sliding velocity in quadrupedal mammalian elbow*. This repository contains the Python and R scripts used within the project.
 
 <!--
 *** Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
@@ -132,17 +132,21 @@ To install these packages and their dependencies, you can use the following code
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-### Python script
+### Python scripts
+#### For measurements:
 To use this codes you should start with the python file [EspInfo.py](EspInfo.py), in that code assure that you have the correct directory for the variable `fileDir` (this variable should be the directory should contain the input files as well as the folder [Distal](/DATA/Distal) *.vtk* files of the distal humerus surfaces are). Additionally, the variables:
 <!-- input files -->
-#### Input Files:
+##### Input Files:
 * *`espfile`* -> the data of the species included in the study [New_tax.csv](DATA/New_tax.csv).
 * *`D3fileDB`* ->  the data of the bones included in the study [3DfilesDb.csv](DATA/3DfilesDb.csv).
 
 <!-- output files -->
-#### Output Files:
+##### Output Files:
 * *`Spout`* -> an output file of the script in which the measurements are related to each species. This file is necessary for the second part which runs in R.
 * *`Bonesout`* -> an output file of the script in which the measurements are related to each bone.
+
+#### Lubrication regime
+[Lub_Regime.py](Lub_Regime.py) allows to determine the film thickness and the lubrication regime for the conditions presented in the paper. The parameters such as sliding speed, material properties, viscosity, rugosity, among others should be define within the code. It should be note that some parameters are expressed with an allometric relationship, for this, they were defined as a list where the first position is the allometric coefficient and the second is the exponent.
 
 ### R script:
 This script is used to define the allometric relationships of the distal humerus. In it, you should define the input directories: `Data_Animal_csv` and `Data_Animal_pd`. These files are output files of the Python script. 
@@ -156,9 +160,9 @@ Also, you should consider modifying the variables `treesfile` (which is the loca
 
 Kalenia Marquez-Florez - kalenia-maria.marquez-florez@univ-amu.fr
 
-Santigo Arroyave-Tobon - santiago.ARROYAVE-TOBON@univ-amu.fr
-
 Loïc Tadrist - loic.TADRIST@univ-amu.fr
+
+Santigo Arroyave-Tobon - santiago.ARROYAVE-TOBON@univ-amu.fr
 
 Jean-Marc Linares - jean-marc.linares@univ-amu.fr
 
