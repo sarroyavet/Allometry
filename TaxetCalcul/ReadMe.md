@@ -34,14 +34,14 @@ The codes here are part of the results from the research paper: *Allometry revea
 *** Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 -->
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-for-taxetcalcul-folder">back to top</a>)</p>
 
 ### Built With
 
 * [![Python][Python.png]][Python-url]
 * [![R][R.png]][R-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="readme-for-taxetcalcul-folder">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -153,7 +153,7 @@ This script is used to define the allometric relationships of the distal humerus
 
 Also, you should consider modifying the variables `treesfile` (which is the location of the phylogenetic trees used in the study) and `ffile` in the different instances of the code (one where the histograms are stored and one where the plots of the phylogenetic trees are stored).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="readme-for-taxetcalcul-folder">back to top</a>)</p>
 
 <!-- CONTACT -->
 ## Contact
@@ -168,7 +168,7 @@ Jean-Marc Linares - jean-marc.linares@univ-amu.fr
 
 Project Link: [https://github.com/sarroyavet/BioDesign_joint_morphogenesis](https://github.com/sarroyavet/BioDesign_joint_morphogenesis)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-for-taxetcalcul-folder">back to top</a>)</p>
 
 
 <!-- ACKNOWLEDGMENTS -->
@@ -176,8 +176,7 @@ Project Link: [https://github.com/sarroyavet/BioDesign_joint_morphogenesis](http
 
 This research was supported by French Research National Agency (Agence Nationale de la Recherche, ANR) Grant No. ANR-20-CE10-0008, through the project BioDesign.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+<p align="right">(<a href="#readme-for-taxetcalcul-folder">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
