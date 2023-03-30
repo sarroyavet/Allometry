@@ -5,6 +5,7 @@ import plotly.graph_objects as go
 import numpy as np
 import math
 
+# Type class for the definition of the parameters of contact
 class Cas():
     def __init__(self, eta, E, nu, w, V, Rm):
         self.eta = eta
@@ -14,41 +15,68 @@ class Cas():
         self.V = V
         self.Rm = Rm
 
+# Function to calculate the dimensionless thickness
 def AdHemin(eta, E, nu, w, Ra, Rb, V, Rm, k=50, Ru = 'mm'):
-    Ef = [E/(1-nu**2), 0.0]
-    Rf = [1/((1/Ra[0])-(1/Rb[0])), Ra[1]]
-    Vp = [Ra[0]*V[0]/Rm[0], V[1]]
-    if Ru == 'mm':
+    Ef = [E/(1-nu**2), 0.0] # effective Young's Modulus PA
+    Rf = [1/((1/Ra[0])-(1/Rb[0])), Ra[1]] # effective Radius mm
+    Vp = [Ra[0]*V[0]/Rm[0], V[1]] # sliding speed at cartilage m/s
+    if Ru == 'mm': # to use if radius in mm
         Rf[0] = Rf[0]*10**-3 # m
-    U = [(eta[0]*Vp[0])/(Ef[0]*Rf[0]), (eta[1]+Vp[1])-(Ef[1]+Rf[1])]
+    # dimensionless velocity
+    U = [(eta[0]*Vp[0])/(Ef[0]*Rf[0]), (eta[1]+Vp[1])-(Ef[1]+Rf[1])] 
+    # dimensionless load
     W = [w[0]/(Ef[0]*Rf[0]**2),w[1]-(Ef[1]+2*Rf[1])]
+    # dimensionless thickness
     Hemin = [7.43*(U[0]**0.65)*(W[0]**-0.21), 0.65*U[1]-0.21*W[1]]
     # *(1-0.85*math.exp(-0.31*k))
     return(Hemin, Rf)
 
+# Function tu calculate the min film thickness
 def dhemin(Hemin, Rf):
-    hemin = [Hemin[0] * Rf[0] * 10**6, Hemin[1]+Rf[1]] # um
+    # Hemin : dimensionless thickness
+    # Rf: effective radius m
+    # hemin:  min thickness um
+    hemin = [Hemin[0] * Rf[0] * 10**6, Hemin[1]+Rf[1]] #um
     return(hemin)
 
+# Function to calculate the radii with the cartilage and the opposing surface
 def Rab(Rm, ci, cii):
+    # ci: proportion for cartilage thickness
+    # cii: proportion for the opposing surface radius
+    # Ra: radius with cartilage mm
+    # Rb: radius of the opposing surface mm
     Ra = [Rm[0]*(1+ci), Rm[1]]
     Rb = [Rm[0]*(1+ci+cii), Rm[1]]
     return(Ra, Rb)
 
+# Function to calculate the min film thickness 
 def Chemin(ci, cii, Data, val = False):
+    # ci: proportion for cartilage thickness
+    # cii: proportion for the opposing surface radius
+    # Ra: radius with cartilage
+    # Rb: radius of the opposing surface
     Ra, Rb = Rab(Data.Rm, ci, cii)
+    # Hemin: dimensionless thickness
+    # Rf: effective radius
     Hemin, Rf = AdHemin(Data.eta, Data.E, Data.nu, Data.w, Ra, Rb, Data.V, Data.Rm)
+    # hemin:  min thickness um
     hemin = dhemin(Hemin, Rf)
-    if val == False:
+    if val == False: # get both allometric coef. and exp.
         return(hemin)
-    if val == True:
+    if val == True: # just get the allometric coef.
         return(hemin[0])
-    
-def Lambda(Ra, hmin):
-    Lambda = hmin / (Ra*2**0.5)
+
+# Function to calculate Lambda for the classification of the regime
+def Lambda(Ru, hmin):
+    # Lambda: Lambda ratio for the classification of lub. regime
+    # Ru: Cartilage rugosity um
+    # hemin:  min thickness um
+    Lambda = hmin / (Ru*2**0.5)
     return(Lambda)
 
+# Function to assign a color according to lambda 
 def Col(Lmb):
+    # Classical classification
     if Lmb < 1: # boundary
         Colores = (0.247, 0.318, 0.710, 0.0) 
     if Lmb >= 1 and Lmb<3: # Mixed
@@ -58,6 +86,7 @@ def Col(Lmb):
     if Lmb>=5: #Hydro
         Colores = (1.000, 0.757, 0.027, 1.0)
     ######################################
+    # New classification
     # if Lmb < 0.1: # boundary
     #     Colores = (0.247, 0.318, 0.710, 0.0) 
     # if Lmb < 1 and Lmb<3: # Mixed
@@ -74,19 +103,36 @@ def Col(Lmb):
 #4CAF50 - a bright green color with RGBA code (0.306, 0.784, 0.314, 1.0)
 #FFC107 - a bright yellow color with RGBA code (1.000, 0.757, 0.027, 1.0)
 
-def LambdaCII(Ra, ci, cii, Data):
-    hemin = Chemin(ci, cii, Data, val = True)
-    Lmb = Lambda(Ra, hemin)
-    col = Col(Lmb)
+# Function to calculate Lambda for the classification of the regime
+# With ci and cii as inputs
+def LambdaCII(Ru, ci, cii, Data):
+    # Ru: Cartilage rugosity um
+    # ci: proportion for cartilage thickness
+    # cii: proportion for the opposing surface radius
+    # Data: object with the basic data of the problem 
+    hemin = Chemin(ci, cii, Data, val = True) # min thickness um
+    Lmb = Lambda(Ru, hemin) # Lambda ratio
+    col = Col(Lmb) # color for classification
     return Lmb, col
 
-def LambdaVts(Ra, ci, cii, Data, Vn):
+# Function to calculate Lambda for the classification of the regime
+# With ci and cii as inputs and changing the sliding velocity
+def LambdaVts(Ru, ci, cii, Data, Vn):
+    # Ru: Cartilage rugosity um
+    # ci: proportion for cartilage thickness
+    # cii: proportion for the opposing surface radius
+    # Data: object with the basic data of the problem 
+    # Vn: new sliding velocity
     Data2 = Cas(Data.eta, Data.E, Data.nu, Data.w, Vn, Data.Rm)
-    hemin = Chemin(ci, cii, Data2, val = True)
-    Lmb = Lambda(Ra, hemin)
-    col = Col(Lmb)
+    # Data2: new object with the new information
+    hemin = Chemin(ci, cii, Data2, val = True) # min thickness
+    Lmb = Lambda(Ru, hemin) # Lambda ratio
+    col = Col(Lmb) # color for classification
     return Lmb, col
 
+# Function to calculate Lambda for the classification of the regime
+# With ci and cii as inputs and changing the sliding velocity and the 
+# force accordingly 
 def LambdaVtsFs(Ra, ci, cii, Data, Vn):
     wn = [Data.w[0]*Vn[0]/Data.V[0], Data.w[1]]
     Data2 = Cas(Data.eta, Data.E, Data.nu, wn, Vn, Data.Rm)
@@ -95,15 +141,16 @@ def LambdaVtsFs(Ra, ci, cii, Data, Vn):
     col = Col(Lmb)
     return Lmb, col
 ################################################
-# general variables
 
-eta = [0.01, 0] # Pa-s
-nu = 0.4
-E = 8.1*10**6 # Pa
-w = [78.2, 0.78] # N
-V = [10**0.61, -0.07] # m/s
-Rm = [(10**0.6)/2, 0.35] # mm 
-Data = Cas(eta, E, nu, w, V, Rm)
+################################################
+# general variables
+eta = [0.01, 0] # Viscosity Pa-s
+nu = 0.4 # Poisson's ratio
+E = 8.1*10**6 # Young's modulus Pa
+w = [78.2, 0.78] # Muscle force N
+V = [10**0.61, -0.07] # Sliding speed m/s
+Rm = [(10**0.6)/2, 0.35] # Average radius mm 
+Data = Cas(eta, E, nu, w, V, Rm) # Creation of the object Data
 
 ################################################
 ######### FILM THICKNESS EVALUATION ############
@@ -160,21 +207,21 @@ szy = 20
 ## Uncomment for evaluation in a range near elbow param 
 c_i = np.linspace(0.0, 0.1, 25 ) #5
 c_ii = np.linspace(0.01, 0.2, 25) #10
-ra = np.linspace(0.68, 6, 25)#
+ru = np.linspace(0.68, 6, 25)#
 
 # Create vectors
 Ci = []
 Cii = []
-Ra = []
+Ru = []
 Lmbd = []
 Colors = []
 for Ici in c_i:
     for Icii in c_ii:
-        for Ira in ra:
+        for Iru in ru:
             Ci.append(Ici)
             Cii.append(Icii)
-            Ra.append(Ira)
-            Lmb, col = LambdaCII(Ira, Ici, Icii, Data)
+            Ru.append(Iru)
+            Lmb, col = LambdaCII(Iru, Ici, Icii, Data)
             Lmbd.append(Lmb)
             Colors.append(col)
 
@@ -183,7 +230,7 @@ fig3 = plt.figure(figsize=(szx*ctm, szy*ctm))
 ax3 = plt.axes(projection='3d')
 
 # plot the cube of points
-p = ax3.scatter(Ra, Ci, Cii, 
+p = ax3.scatter(Ru, Ci, Cii, 
                 c = Colors, 
                 cmap= 'viridis', 
                 marker = "o", 
@@ -193,23 +240,23 @@ p = ax3.scatter(Ra, Ci, Cii,
                 )
 
 # boundaries of the cube
-ax3.plot([min(Ra), max(Ra)], [min(Ci), min(Ci)], [min(Cii), min(Cii)], color='grey') # plot the line
-ax3.plot([max(Ra), max(Ra)], [min(Ci), max(Ci)], [min(Cii), min(Cii)], color='grey') # plot the line
-ax3.plot([max(Ra), min(Ra)], [max(Ci), max(Ci)], [min(Cii), min(Cii)], color='grey') # plot the line
-ax3.plot([min(Ra), min(Ra)], [max(Ci), min(Ci)], [min(Cii), min(Cii)], color='grey') # plot the line
+ax3.plot([min(Ru), max(Ru)], [min(Ci), min(Ci)], [min(Cii), min(Cii)], color='grey') # plot the line
+ax3.plot([max(Ru), max(Ru)], [min(Ci), max(Ci)], [min(Cii), min(Cii)], color='grey') # plot the line
+ax3.plot([max(Ru), min(Ru)], [max(Ci), max(Ci)], [min(Cii), min(Cii)], color='grey') # plot the line
+ax3.plot([min(Ru), min(Ru)], [max(Ci), min(Ci)], [min(Cii), min(Cii)], color='grey') # plot the line
 
-ax3.plot([min(Ra), max(Ra)], [min(Ci), min(Ci)], [max(Cii), max(Cii)], color='grey') # plot the line
-ax3.plot([max(Ra), max(Ra)], [min(Ci), max(Ci)], [max(Cii), max(Cii)], color='grey') # plot the line
-ax3.plot([max(Ra), min(Ra)], [max(Ci), max(Ci)], [max(Cii), max(Cii)], color='grey') # plot the line
-ax3.plot([min(Ra), min(Ra)], [max(Ci), min(Ci)], [max(Cii), max(Cii)], color='grey') # plot the line
+ax3.plot([min(Ru), max(Ru)], [min(Ci), min(Ci)], [max(Cii), max(Cii)], color='grey') # plot the line
+ax3.plot([max(Ru), max(Ru)], [min(Ci), max(Ci)], [max(Cii), max(Cii)], color='grey') # plot the line
+ax3.plot([max(Ru), min(Ru)], [max(Ci), max(Ci)], [max(Cii), max(Cii)], color='grey') # plot the line
+ax3.plot([min(Ru), min(Ru)], [max(Ci), min(Ci)], [max(Cii), max(Cii)], color='grey') # plot the line
 
-ax3.plot([max(Ra), max(Ra)], [min(Ci), min(Ci)], [min(Cii), max(Cii)], color='grey') # plot the line
-ax3.plot([max(Ra), max(Ra)], [max(Ci), max(Ci)], [min(Cii), max(Cii)], color='grey') # plot the line
-ax3.plot([min(Ra), min(Ra)], [max(Ci), max(Ci)], [min(Cii), max(Cii)], color='grey') # plot the line
-ax3.plot([min(Ra), min(Ra)], [min(Ci), min(Ci)], [min(Cii), max(Cii)], color='grey') # plot the line
+ax3.plot([max(Ru), max(Ru)], [min(Ci), min(Ci)], [min(Cii), max(Cii)], color='grey') # plot the line
+ax3.plot([max(Ru), max(Ru)], [max(Ci), max(Ci)], [min(Cii), max(Cii)], color='grey') # plot the line
+ax3.plot([min(Ru), min(Ru)], [max(Ci), max(Ci)], [min(Cii), max(Cii)], color='grey') # plot the line
+ax3.plot([min(Ru), min(Ru)], [min(Ci), min(Ci)], [min(Cii), max(Cii)], color='grey') # plot the line
 
-Xmin = min(Ra)
-Xmax = max(Ra)
+Xmin = min(Ru)
+Xmax = max(Ru)
 Ymin = min(Ci)
 Ymax = max(Ci)
 Zmin = min(Cii)
@@ -219,7 +266,7 @@ ax3.set_xlim([Xmin, Xmax])
 ax3.set_ylim([Ymin, Ymax])
 ax3.set_zlim([Zmin, Zmax])
 
-ax3.set_xlabel('Ra')
+ax3.set_xlabel('Ru')
 ax3.set_ylabel('Ci')
 ax3.set_zlabel('Cii')
 
@@ -232,19 +279,19 @@ plt.show()
 # Uncomment if more density is needed 
 # c_i = np.linspace(0.0, 1.0, 70 ) #5
 # c_ii = np.linspace(0.01, 10, 70) #10
-# ra = np.linspace(0.68, 80, 70)#(0.68, 6.5, 5) #10
+# ru = np.linspace(0.68, 80, 70)#(0.68, 6.5, 5) #10
 # Ci = []
 # Cii = []
-# Ra = []
+# Ru = []
 # Lmbd = []
 # Colors = []
 # for Ici in c_i:
 #     for Icii in c_ii:
-#         for Ira in ra:
+#         for Iru in ru:
 #             Ci.append(Ici)
 #             Cii.append(Icii)
-#             Ra.append(Ira)
-#             Lmb, col = LambdaCII(Ira, Ici, Icii, Data)
+#             Ru.append(Iru)
+#             Lmb, col = LambdaCII(Iru, Ici, Icii, Data)
 #             Lmbd.append(Lmb)
 #             Colors.append(col)
 
@@ -257,18 +304,18 @@ ax3 = plt.axes(projection='3d')
 Lmbd_sans_bd =[]
 Ci_sans_bd = [] 
 Cii_sans_bd = []
-Ra_sans_bd = []
+Ru_sans_bd = []
 Colors_sans_bd = []
 for ILmb in range(len(Lmbd)):
     if Lmbd[ILmb] >= 1:
         Lmbd_sans_bd.append(Lmbd[ILmb])
         Ci_sans_bd.append(Ci[ILmb])
         Cii_sans_bd.append(Cii[ILmb])
-        Ra_sans_bd.append(Ra[ILmb])
+        Ru_sans_bd.append(Ru[ILmb])
         Colors_sans_bd.append(Colors[ILmb])
 
 # plot
-p = ax3.scatter(Ra_sans_bd, Ci_sans_bd, Cii_sans_bd, 
+p = ax3.scatter(Ru_sans_bd, Ci_sans_bd, Cii_sans_bd, 
                 c =  Colors_sans_bd, 
                 cmap= 'viridis', 
                 marker = ".", 
@@ -282,7 +329,7 @@ ax3.set_xlim([Xmin, Xmax])
 ax3.set_ylim([Ymin, Ymax])
 ax3.set_zlim([Zmin, Zmax])
 
-ax3.set_xlabel('Ra')
+ax3.set_xlabel('Ru')
 ax3.set_ylabel('Ci')
 ax3.set_zlabel('Cii')
 
@@ -299,18 +346,18 @@ ax3 = plt.axes(projection='3d')
 Lmbd_sans_bdM =[]
 Ci_sans_bdM = [] 
 Cii_sans_bdM = []
-Ra_sans_bdM = []
+Ru_sans_bdM = []
 Colors_sans_bdM = []
 for ILmb in range(len(Lmbd_sans_bd)):
     if Lmbd_sans_bd[ILmb] >= 3:
         Lmbd_sans_bdM.append(Lmbd_sans_bd[ILmb])
         Ci_sans_bdM.append(Ci_sans_bd[ILmb])
         Cii_sans_bdM.append(Cii_sans_bd[ILmb])
-        Ra_sans_bdM.append(Ra_sans_bd[ILmb])
+        Ru_sans_bdM.append(Ru_sans_bd[ILmb])
         Colors_sans_bdM.append(Colors_sans_bd[ILmb])
 
 # plot
-p = ax3.scatter(Ra_sans_bdM, Ci_sans_bdM, Cii_sans_bdM, 
+p = ax3.scatter(Ru_sans_bdM, Ci_sans_bdM, Cii_sans_bdM, 
                 c =  Colors_sans_bdM, 
                 cmap= 'viridis', 
                 marker = ".", 
@@ -324,7 +371,7 @@ ax3.set_xlim([Xmin, Xmax])
 ax3.set_ylim([Ymin, Ymax])
 ax3.set_zlim([Zmin, Zmax])
 
-ax3.set_xlabel('Ra')
+ax3.set_xlabel('Ru')
 ax3.set_ylabel('Ci')
 ax3.set_zlabel('Cii')
 
@@ -341,18 +388,18 @@ ax3 = plt.axes(projection='3d')
 Lmbd_sans_bdME =[]
 Ci_sans_bdME = [] 
 Cii_sans_bdME = []
-Ra_sans_bdME = []
+Ru_sans_bdME = []
 Colors_sans_bdME = []
 for ILmb in range(len(Lmbd_sans_bdM)):
     if Lmbd_sans_bdM[ILmb] >= 5:
         Lmbd_sans_bdME.append(Lmbd_sans_bdM[ILmb])
         Ci_sans_bdME.append(Ci_sans_bdM[ILmb])
         Cii_sans_bdME.append(Cii_sans_bdM[ILmb])
-        Ra_sans_bdME.append(Ra_sans_bdM[ILmb])
+        Ru_sans_bdME.append(Ru_sans_bdM[ILmb])
         Colors_sans_bdME.append(Colors_sans_bdM[ILmb])
 
 # plot
-p = ax3.scatter(Ra_sans_bdME, Ci_sans_bdME, Cii_sans_bdME, 
+p = ax3.scatter(Ru_sans_bdME, Ci_sans_bdME, Cii_sans_bdME, 
                 c =  Colors_sans_bdME, 
                 cmap= 'viridis', 
                 marker = ".", 
@@ -366,7 +413,7 @@ ax3.set_xlim([Xmin, Xmax])
 ax3.set_ylim([Ymin, Ymax])
 ax3.set_zlim([Zmin, Zmax])
 
-ax3.set_xlabel('Ra')
+ax3.set_xlabel('Ru')
 ax3.set_ylabel('Ci')
 ax3.set_zlabel('Cii')
 
@@ -379,19 +426,19 @@ plt.show()
 ## Uncomment for evaluation in a range near elbow param 
 c_i = 0.06 #
 c_ii = 0.07 #
-ra = np.linspace(0.68, 6, 50)#
+ru = np.linspace(0.68, 6, 50)#
 vn = np.linspace(0.001, 5, 50)#
 
 # Create vectors
 Vn = []
-Ra = []
+Ru = []
 Lmbd = []
 Colors = []
 for Ivn in vn:
-    for Ira in ra:
+    for Iru in ru:
         Vn.append(Ivn)
-        Ra.append(Ira)
-        Lmb, col = LambdaVts(Ira, c_i, c_ii, Data, [Ivn, -0.07])
+        Ru.append(Iru)
+        Lmb, col = LambdaVts(Iru, c_i, c_ii, Data, [Ivn, -0.07])
         Lmbd.append(Lmb)
         Colors.append(col)
 
@@ -400,7 +447,7 @@ fig3 = plt.figure(figsize=(szx*ctm, szy*ctm))
 ax3 = plt.axes(projection='3d')
 
 # plot the cube of points
-p = ax3.scatter(Ra, Vn, Lmbd, 
+p = ax3.scatter(Ru, Vn, Lmbd, 
                 c = Colors, 
                 cmap= 'viridis', 
                 marker = "o", 
@@ -409,8 +456,8 @@ p = ax3.scatter(Ra, Vn, Lmbd,
                 linewidths = 0,
                 )
 
-Xmin = min(Ra)
-Xmax = max(Ra)
+Xmin = min(Ru)
+Xmax = max(Ru)
 Ymin = min(Vn)
 Ymax = max(Vn)
 Zmin = min(Lmbd)
@@ -420,7 +467,7 @@ ax3.set_xlim([Xmin, Xmax])
 ax3.set_ylim([Ymin, Ymax])
 ax3.set_zlim([Zmin, Zmax])
 
-ax3.set_xlabel('Ra')
+ax3.set_xlabel('Ru')
 ax3.set_ylabel('Vn')
 ax3.set_zlabel('Lamb')
 
@@ -441,14 +488,14 @@ vn = np.geomspace(0.001, 5, num = 100)#
 
 # Create vectors
 Vn = []
-Ra = []
+Ru = []
 Lmbd = []
 Colors = []
 for Ivn in vn:
-    for Ira in ra:
+    for Iru in ra:
         Vn.append(Ivn)
-        Ra.append(Ira)
-        Lmb, col = LambdaVtsFs(Ira, c_i, c_ii, Data, [Ivn, -0.07])
+        Ru.append(Iru)
+        Lmb, col = LambdaVtsFs(Iru, c_i, c_ii, Data, [Ivn, -0.07])
         Lmbd.append(Lmb)
         Colors.append(col)
 
@@ -457,7 +504,7 @@ fig3 = plt.figure(figsize=(szx*ctm, szy*ctm))
 ax3 = plt.axes(projection='3d')
 
 # plot the surf of points
-p = ax3.scatter(Ra, Vn, Lmbd, 
+p = ax3.scatter(Ru, Vn, Lmbd, 
                 c = Colors, 
                 cmap= 'viridis', 
                 marker = "o", 
@@ -466,8 +513,8 @@ p = ax3.scatter(Ra, Vn, Lmbd,
                 linewidths = 0,
                 )
 
-Xmin = min(Ra)
-Xmax = max(Ra)
+Xmin = min(Ru)
+Xmax = max(Ru)
 Ymin = min(Vn)
 Ymax = max(Vn)
 Zmin = min(Lmbd)
@@ -477,7 +524,7 @@ ax3.set_xlim([Xmin, Xmax])
 ax3.set_ylim([Ymin, Ymax])
 ax3.set_zlim([Zmin, Zmax])
 
-ax3.set_xlabel('Ra')
+ax3.set_xlabel('Ru')
 ax3.set_ylabel('Vn')
 ax3.set_zlabel('Lamb')
 
