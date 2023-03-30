@@ -1,3 +1,10 @@
+################################################################################################
+''' Developed by Kalenia Marquez Florez
+    Aix Marseille Univ, CNRS, ISM, Marseille, France
+    March 2023
+
+'''
+
 import numpy as np
 from cmath import e
 

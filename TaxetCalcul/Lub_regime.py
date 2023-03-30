@@ -1,4 +1,12 @@
+################################################################################################
+''' Developed by Kalenia Marquez Florez
+    Aix Marseille Univ, CNRS, ISM, Marseille, France
+    March 2023
+
+    Script to calculate the film thickness of the elbow in extreme locomotion conditions.
+'''
 #
+
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import plotly.graph_objects as go

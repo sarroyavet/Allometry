@@ -1,3 +1,10 @@
+################################################################################################
+''' Developed by Kalenia Marquez Florez
+    Aix Marseille Univ, CNRS, ISM, Marseille, France
+    March 2023
+
+'''
+
 import json
 from Get_MessIR import read_mesh
 from Get_MessIR import Plot3Dscatter

@@ -1,3 +1,10 @@
+################################################################################################
+''' Developed by Kalenia Marquez Florez
+    Aix Marseille Univ, CNRS, ISM, Marseille, France
+    March 2023
+
+'''
+
 from cmath import e
 import csv
 import json

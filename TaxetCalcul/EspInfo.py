@@ -1,3 +1,10 @@
+################################################################################################
+''' Developed by Kalenia Marquez Florez
+    Aix Marseille Univ, CNRS, ISM, Marseille, France
+    March 2023
+
+'''
+
 #Read the CSV file and create the objects of the species with the info
 from GetInfoII import *
 

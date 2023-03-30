@@ -1,3 +1,12 @@
+################################################################################################
+# # ''' Developed by Kalenia Marquez Florez
+#     Aix Marseille Univ, CNRS, ISM, Marseille, France
+#     March 2023
+# 
+#     Script to calculate the allometry of the dimensions, pressure, and sliding
+#     velocity for the distal humerus in quadrupedal mammals
+# '''
+
 # Clean everything ####
 rm(list = ls())
 
@@ -867,119 +876,6 @@ abline(Vsup_C.PGLSav.massAvg, col = rgb(0.01, 0.01, 0.4, 1))
 minor.ticks.axis(1,9, mt = atx, mn = min(atx), mx = max(atx))
 minor.ticks.axis(2,9, mt = aty, mn = min(aty), mx = max(aty))
 par(new = F)
-
-#### get the pgls for hirtspeed and deltaR
-P1 <- sym('speedHirt')
-P2 <- sym('DeltaR')
-# combine phylo with the dataset and ensure structure and ordering
-CompData = comparative.data(phy, 
-                            data = Data_Animal_de_pd[,c("massAvg", 
-                                                        'Long',
-                                                        'Long_m',
-                                                        'La',
-                                                        'La_m',
-                                                        'Rmax',
-                                                        'Rmax_m',
-                                                        'Rmin',
-                                                        'Rmin_m',
-                                                        'DeltaR',
-                                                        'Dmed',
-                                                        'angeqv',
-                                                        'Pry_Area_m',
-                                                        'P_eq',
-                                                        'Vsup_C',
-                                                        'order',
-                                                        'speedHirt',
-                                                        'speedHirt_ms',
-                                                        'spdMissing',
-                                                        'Sci_name2')],
-                            names.col = 'Sci_name2', 
-                            na.omit = TRUE)
-trai <- try(assign(paste(P2,'.PGLSav.',P1, sep = ''),
-                   getpgls(!!P2, !!P1, CompData)), 
-            silent = TRUE)
-print(class(trai))
-
-#### plot DetlaR vs speed ####
-plot(CompData$data$speedHirt, CompData$data$DeltaR, log = 'xy',  frame = FALSE)
-abline(DeltaR.PGLSav.speedHirt)
-
-P1 <- sym('DeltaR')
-P2 <- sym('spdMissing')
-# combine phylo with the dataset and ensure structure and ordering
-CompData = comparative.data(phy, 
-                            data = Data_Animal_de_pd[,c("massAvg", 
-                                                        'Long',
-                                                        'Long_m',
-                                                        'La',
-                                                        'La_m',
-                                                        'Rmax',
-                                                        'Rmax_m',
-                                                        'Rmin',
-                                                        'Rmin_m',
-                                                        'DeltaR',
-                                                        'Dmed',
-                                                        'angeqv',
-                                                        'Pry_Area_m',
-                                                        'P_eq',
-                                                        'Vsup_C',
-                                                        'order',
-                                                        'speedHirt',
-                                                        'speedHirt_ms',
-                                                        'spdMissing',
-                                                        'Sci_name2')],
-                            names.col = 'Sci_name2', 
-                            na.omit = TRUE)
-assign(paste(P2,'.PGLSav.',P1, sep = ''),
-       getpgls(!!P2, !!P1, CompData))
-trai <- try(assign(paste(P2,'.PGLSav.',P1, sep = ''),
-                   getpgls(!!P2, !!P1, CompData)), 
-            silent = TRUE)
-print(class(trai))
-
-#### plot DetlaR vs speed ####
-plot(CompData$data$DeltaR, CompData$data$spdMissing, log = 'xy',  frame = FALSE)
-abline(spdMissing.PGLSav.DeltaR)
-
-P1 <- sym('spdMissing')
-P2 <- sym('DeltaR')
-# combine phylo with the dataset and ensure structure and ordering
-CompData = comparative.data(phy, 
-                            data = Data_Animal_de_pd[,c("massAvg", 
-                                                        'Long',
-                                                        'Long_m',
-                                                        'La',
-                                                        'La_m',
-                                                        'Rmax',
-                                                        'Rmax_m',
-                                                        'Rmin',
-                                                        'Rmin_m',
-                                                        'DeltaR',
-                                                        'Dmed',
-                                                        'angeqv',
-                                                        'Pry_Area_m',
-                                                        'P_eq',
-                                                        'Vsup_C',
-                                                        'order',
-                                                        'speedHirt',
-                                                        'speedHirt_ms',
-                                                        'spdMissing',
-                                                        'Sci_name2')],
-                            names.col = 'Sci_name2', 
-                            na.omit = TRUE)
-assign(paste(P2,'.PGLSav.',P1, sep = ''),
-       getpgls(!!P2, !!P1, CompData))
-trai <- try(assign(paste(P2,'.PGLSav.',P1, sep = ''),
-                   getpgls(!!P2, !!P1, CompData)), 
-            silent = TRUE)
-print(class(trai))
-
-#### plot DetlaR vs speed ####
-plot(CompData$data$spdMissing, CompData$data$DeltaR, log = 'xy',  frame = FALSE)
-abline(DeltaR.PGLSav.spdMissing)
-
-
-
 
 ################################################################################
 ###############             TREE VISUALIZATION              ####################
