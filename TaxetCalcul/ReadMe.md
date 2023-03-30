@@ -41,7 +41,7 @@ The codes here are part of the results from the research paper: *Allometry revea
 * [![Python][Python.png]][Python-url]
 * [![R][R.png]][R-url]
 
-<p align="right">(<a href="readme-for-taxetcalcul-folder">back to top</a>)</p>
+<p align="right">(<a href="#readme-for-taxetcalcul-folder">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -153,7 +153,7 @@ This script is used to define the allometric relationships of the distal humerus
 
 Also, you should consider modifying the variables `treesfile` (which is the location of the phylogenetic trees used in the study) and `ffile` in the different instances of the code (one where the histograms are stored and one where the plots of the phylogenetic trees are stored).
 
-<p align="right">(<a href="readme-for-taxetcalcul-folder">back to top</a>)</p>
+<p align="right">(<a href="#readme-for-taxetcalcul-folder">back to top</a>)</p>
 
 <!-- CONTACT -->
 ## Contact
