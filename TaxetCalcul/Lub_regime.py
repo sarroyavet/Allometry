@@ -85,24 +85,24 @@ def Lambda(Ru, hmin):
 # Function to assign a color according to lambda 
 def Col(Lmb):
     # Classical classification
-    if Lmb < 1: # boundary
-        Colores = (0.247, 0.318, 0.710, 0.0) 
-    if Lmb >= 1 and Lmb<3: # Mixed
-        Colores= (0.957, 0.263, 0.212, 1.0)
-    if Lmb>=3 and Lmb<5: #elasto
-        Colores = (0.306, 0.784, 0.314, 1.0)
-    if Lmb>=5: #Hydro
-        Colores = (1.000, 0.757, 0.027, 1.0)
-    ######################################
-    # New classification
-    # if Lmb < 0.1: # boundary
+    # if Lmb < 1: # boundary
     #     Colores = (0.247, 0.318, 0.710, 0.0) 
-    # if Lmb < 1 and Lmb<3: # Mixed
+    # if Lmb >= 1 and Lmb<3: # Mixed
     #     Colores= (0.957, 0.263, 0.212, 1.0)
-    # if Lmb>=1 and Lmb<5: #elasto
+    # if Lmb>=3 and Lmb<5: #elasto
     #     Colores = (0.306, 0.784, 0.314, 1.0)
     # if Lmb>=5: #Hydro
     #     Colores = (1.000, 0.757, 0.027, 1.0)
+    ######################################
+    # New classification
+    if Lmb < 0.1: # boundary
+        Colores = (0.247, 0.318, 0.710, 0.0) 
+    if Lmb < 1 and Lmb<3: # Mixed
+        Colores= (0.957, 0.263, 0.212, 1.0)
+    if Lmb>=1 and Lmb<5: #elasto
+        Colores = (0.306, 0.784, 0.314, 1.0)
+    if Lmb>=5: #Hydro
+        Colores = (1.000, 0.757, 0.027, 1.0)
     #
     return Colores
 
@@ -539,6 +539,8 @@ ax3.set_zlabel('Lamb')
 # orientation
 ax3.view_init(azim= Az, elev=elv)
 plt.show()
+
+print(LambdaVtsFs(1.42, c_i, c_ii, Data, [0.01425, -0.07]))
 
 
 # v = np.linspace(0, 120, 13)
