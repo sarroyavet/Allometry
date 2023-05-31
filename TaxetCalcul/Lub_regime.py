@@ -85,24 +85,24 @@ def Lambda(Ru, hmin):
 # Function to assign a color according to lambda 
 def Col(Lmb):
     # Classical classification
-    # if Lmb < 1: # boundary
-    #     Colores = (0.247, 0.318, 0.710, 0.0) 
-    # if Lmb >= 1 and Lmb<3: # Mixed
-    #     Colores= (0.957, 0.263, 0.212, 1.0)
-    # if Lmb>=3 and Lmb<5: #elasto
-    #     Colores = (0.306, 0.784, 0.314, 1.0)
-    # if Lmb>=5: #Hydro
-    #     Colores = (1.000, 0.757, 0.027, 1.0)
-    ######################################
-    # New classification
-    if Lmb < 0.1: # boundary
+    if Lmb < 1: # boundary
         Colores = (0.247, 0.318, 0.710, 0.0) 
-    if Lmb < 1 and Lmb<3: # Mixed
+    if Lmb >= 1 and Lmb<3: # Mixed
         Colores= (0.957, 0.263, 0.212, 1.0)
-    if Lmb>=1 and Lmb<5: #elasto
+    if Lmb>=3 and Lmb<5: #elasto
         Colores = (0.306, 0.784, 0.314, 1.0)
     if Lmb>=5: #Hydro
         Colores = (1.000, 0.757, 0.027, 1.0)
+    ######################################
+    # New classification
+    # if Lmb < 0.1: # boundary
+    #     Colores = (0.247, 0.318, 0.710, 0.0) 
+    # if Lmb < 1 and Lmb<3: # Mixed
+    #     Colores= (0.957, 0.263, 0.212, 1.0)
+    # if Lmb>=1 and Lmb<5: #elasto
+    #     Colores = (0.306, 0.784, 0.314, 1.0)
+    # if Lmb>=5: #Hydro
+    #     Colores = (1.000, 0.757, 0.027, 1.0)
     #
     return Colores
 
@@ -169,13 +169,20 @@ cii = 0.07
 print(Chemin(ci, cii, Data))
 
 # Print plot for ci and cii sensitivity
-ci = np.linspace(0.0, 0.2, 1000)
-cii = np.geomspace(0.01, 1, num=2000)
+ci = np.linspace(0.0, 0.2, 1000) #np.linspace(0.0, 0.1, 1000)
+cii = np.geomspace(0.01, 1, num=2000) #np.geomspace(0.01, 0.1, num=2000)
 Ci, Cii = np.meshgrid(ci, cii)
 
 hee = Chemin(Ci, Cii, Data, val = True)
 
 # plot the surface
+# parameters
+Az = -30
+elv = 30
+ctm = 1/2.54  # centimeters in inches
+szx = 20
+szy = 20
+
 fig = plt.figure(figsize=(20,10))
 ax1 = fig.add_subplot(111, projection='3d')
 surf = ax1.plot_surface(Ci, Cii, hee, cmap='viridis',  linewidth=0, antialiased=False, alpha=0.8)
@@ -190,9 +197,11 @@ z_max = np.max(surf.get_array())
 print('h_min the min:', z_min)
 print('h_min the max:', z_max)
 
-v = np.linspace(z_min, z_max, 10)
+v = np.linspace(round(z_min), round(z_max), 10)
 fig.colorbar(surf, ticks = v)
 
+# orientation
+ax1.view_init(azim= Az, elev=elv)
 plt.show()
 
 ##############################################
@@ -214,7 +223,7 @@ szy = 20
 
 ## Uncomment for evaluation in a range near elbow param 
 c_i = np.linspace(0.0, 0.1, 25 ) #5
-c_ii = np.linspace(0.01, 0.2, 25) #10
+c_ii = np.linspace(0.01, 0.1, 25) #10
 ru = np.linspace(0.68, 6, 25)#
 
 # Create vectors

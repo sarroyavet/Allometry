@@ -5,9 +5,9 @@
 
 This folder contains the supplementary data for the research article: 
 
-***Allometry reveals consistent pressure and sliding velocity in quadrupedal mammalian elbow***
+***Elbow dimensions in quadrupedal mammals driven by lubrication regime***
 
-*Kalenia Marquez-Florez, Loïc Tadrist, Santiago Arroyave-Tobon, Jean-Marc Linares*
+*Kalenia Marquez-Florez, Santiago Arroyave-Tobon, Loïc Tadrist, Jean-Marc Linares*
 
 Aix Marseille Univ, CNRS, ISM, Marseille, France
 
@@ -41,9 +41,9 @@ The files here are part of the results from the research paper: *Allometry revea
 
 Kalenia Marquez-Florez - kalenia-maria.marquez-florez@univ-amu.fr
 
-Loïc Tadrist - loic.TADRIST@univ-amu.fr
-
 Santigo Arroyave-Tobon - santiago.ARROYAVE-TOBON@univ-amu.fr
+
+Loïc Tadrist - loic.TADRIST@univ-amu.fr
 
 Jean-Marc Linares - jean-marc.linares@univ-amu.fr
 
@@ -52,6 +52,6 @@ Project Link: [https://github.com/sarroyavet/BioDesign_joint_morphogenesis](http
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-This research was supported by French Research National Agency (Agence Nationale de la Recherche, ANR) Grant No. ANR-20-CE10-0008, through the project BioDesign.
+This research was supported by the French Research National Agency (Agence Nationale de la Recherche, ANR) Grant No. ANR-20-CE10-0008, through the project BioDesign.
 
 <p align="right">(<a href="#readme-for-data-folder">back to top</a>)</p>
