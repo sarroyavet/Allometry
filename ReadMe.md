@@ -12,7 +12,13 @@
 
 ## Contact
 
+*Developer:* 
+
 Kalenia Marquez-Florez - kalenia-maria.marquez-florez@univ-amu.fr
+
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+*Co-authors:* 
 
 Santigo Arroyave-Tobon - santiago.ARROYAVE-TOBON@univ-amu.fr
 
@@ -28,3 +34,6 @@ Project Link: [https://github.com/sarroyavet/BioDesign_joint_morphogenesis](http
 This research was supported by the French Research National Agency (Agence Nationale de la Recherche, ANR) Grant No. ANR-20-CE10-0008, through the project BioDesign.
 
 <p align="right">(<a href="#readmes">back to top</a>)</p>
+
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/kalenia-márquez-flórez-5b686064/

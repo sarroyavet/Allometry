@@ -9,10 +9,9 @@ This folder contains the code employed within the research paper:
 
 *Kalenia Marquez-Florez, Santiago Arroyave-Tobon, Loïc Tadrist, Jean-Marc Linares*
 
-Aix Marseille Univ, CNRS, ISM, Marseille, France
-
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
+Aix Marseille Univ, CNRS, ISM, Marseille, France
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -158,7 +157,13 @@ Also, you should consider modifying the variables `treesfile` (which is the loca
 <!-- CONTACT -->
 ## Contact
 
+*Developer:* 
+
 Kalenia Marquez-Florez - kalenia-maria.marquez-florez@univ-amu.fr
+
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+*Co-authors:* 
 
 Santigo Arroyave-Tobon - santiago.ARROYAVE-TOBON@univ-amu.fr
 
