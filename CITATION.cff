@@ -1,0 +1,10 @@
+f-version: 1.1.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Marques-Florez
+    given-names: Kalenia
+    orcid: https://orcid.org/0000-0001-6388-3208
+title: sarroyavet/Allometry: Allometry of the distal humerus lubrication parameters
+version: v1.1
+date-released: 2023-06-05
+            
